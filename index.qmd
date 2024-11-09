@@ -7,10 +7,7 @@ date-format: long
 ---
 
 # Introduction
-
-\[\~ 200 words\]
-
-Clearly stated background and questions / hypotheses / problems being addressed. Sets up the analysis in an interesting and compelling way. Include figures if you like.
+Hurricane Milton was a very unusually hurricane in the path it took throughout the Gulf of Mexico, through Florida, and then through the Atlantic when compared to other hurricanes during 2024, with hurricane Helene also being an odd hurricane in the path it took through the continental United States as well. Because of the abnormalities of Milton, I intend to analyze the track of Hurricane Milton through the Gulf of Mexico in comparison to other hurricanes and tropical storm that occurred in the Gulf of Mexico, and via the storm tracks and storm events such as rain and wind measurements of hurricanes from the past 20+ years. In order of doing this, I will be referring to different hurricane records taken from NOAA’s Historical Hurricanes and Tropical systems webpage, the CRAN Hurricane Exposure package and NOAA’s Historical Hurricane Tracks webpage, along with the in class lab’s data set from NOAA's international-best-track-archive-for-climate-stewardship-ibtracs, as one of the beast means of analysis for the possible change sin strength of hurricane Milton when compared to these other hurricanes. With this, I will also be referring to the Intergovernmental Panel on Climate Change (IPCC) 2022 Sixth Assessment Report to make assessments of the possible strength future hurricanes and tropical storms may have, based on projections about climate change that are listed within the report.
 
 # Materials and methods
 
