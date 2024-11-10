@@ -7,7 +7,18 @@ date-format: long
 ---
 
 # Introduction
-Hurricane Milton was a very unusually hurricane in the path it took throughout the Gulf of Mexico, through Florida, and then through the Atlantic when compared to other hurricanes during 2024, with hurricane Helene also being an odd hurricane in the path it took through the continental United States as well. Because of the abnormalities of Milton, I intend to analyze the track of Hurricane Milton through the Gulf of Mexico in comparison to other hurricanes and tropical storm that occurred in the Gulf of Mexico, and via the storm tracks and storm events such as rain and wind measurements of hurricanes from the past 20+ years. In order of doing this, I will be referring to different hurricane records taken from NOAA’s Historical Hurricanes and Tropical systems webpage, the CRAN Hurricane Exposure package and NOAA’s Historical Hurricane Tracks webpage, along with the in class lab’s data set from NOAA's international-best-track-archive-for-climate-stewardship-ibtracs, as one of the beast means of analysis for the possible change sin strength of hurricane Milton when compared to these other hurricanes. With this, I will also be referring to the Intergovernmental Panel on Climate Change (IPCC) 2022 Sixth Assessment Report to make assessments of the possible strength future hurricanes and tropical storms may have, based on projections about climate change that are listed within the report.
+
+#Hurricane Milton was a very unusually hurricane in the path it took throughout the Gulf of Mexico, 
+#through Florida, and then through the Atlantic when compared to other hurricanes during 2024, 
+#with hurricane Helene also being an odd hurricane in the path it took through the continental United States as well. 
+#Because of the abnormalities of Milton, I intend to analyze the track of Hurricane Milton through the Gulf of Mexico in comparison to other hurricanes and tropical storm that occurred in the Gulf of Mexico, 
+#and via the storm tracks and storm events such as rain and wind measurements of hurricanes from the past 20+ years. 
+#In order of doing this, I will be referring to different hurricane records taken from NOAA’s Historical Hurricanes and Tropical systems webpage, 
+#the CRAN Hurricane Exposure package and NOAA’s Historical Hurricane Tracks webpage, along with the in class lab’s data set
+#from NOAA's international-best-track-archive-for-climate-stewardship-ibtracs, 
+#as one of the beast means of analysis for the possible changes in strength of hurricane Milton when compared to these other hurricanes. 
+#With this, I will also be referring to the Intergovernmental Panel on Climate Change (IPCC) 2022 Sixth Assessment Report to make assessments of the possible strength future hurricanes and tropical storms may have,
+#based on projections about climate change that are listed within the report.
 
 # Materials and methods
 
@@ -54,6 +65,149 @@ knitr::opts_chunk$set(cache=TRUE)  # cache the results for quick compiling
 ```
 
 ## Download and clean all required data
+
+#SCRIPT
+
+library(drat)
+addRepo("geanders")
+install.packages("hurricaneexposure") 
+install.packages("hurricaneexposuredata")
+
+library(sf)
+library(tidyverse)
+library(ggmap)
+library(spData)
+library(lubridate)
+library(hurricaneexposure)
+library(hurricaneexposuredata)
+data(world)
+data(us_states)
+
+# Download a csv from noaa with storm track information
+dataurl="https://www.ncei.noaa.gov/data/international-best-track-archive-for-climate-stewardship-ibtracs/v04r01/access/csv/ibtracs.NA.list.v04r01.csv"
+
+storm_data <- read_csv(dataurl)
+
+storm_data_new <- storm_data%>%
+  mutate(year = year(ISO_TIME))%>%
+  filter(year >= 2000) %>%
+  mutate_if(is.numeric, function(x) ifelse(x==-999.0,NA,x)) %>%
+  mutate(decade=(floor(year/10)*10))
+
+
+sf_storm_data <- storm_data_new %>%
+  st_as_sf(coords=c("LON","LAT"),crs=4326, remove = FALSE)
+
+region <- st_bbox(sf_storm_data)
+
+ggplot(data = world)+
+  geom_sf()+
+  stat_bin2d(data=storm_data_new, aes(y=st_coordinates(sf_storm_data)[,2], x=st_coordinates(sf_storm_data)[,1]),bins=100)+
+  facet_wrap(~decade)+
+  scale_fill_distiller(palette="YlOrRd", trans="log", direction=-1, breaks = c(1,10,100,1000))+
+  coord_sf(ylim=region[c(2,4)], xlim=region[c(1,3)])
+
+#26055, 26109
+Milton_storm <- storm_data_new %>%
+  mutate(year = year(ISO_TIME))%>%
+  filter(year == 2024)%>%
+  filter(NUMBER == 71)
+
+
+Milton_storm_data <- Milton_storm %>%
+  st_as_sf(coords=c("LON","LAT"),crs=4326, remove = FALSE)
+
+region <- st_bbox(Milton_storm_data)
+
+ggplot(data = world)+
+  geom_sf() + 
+  stat_bin2d(data=Milton_storm_data, aes(y=st_coordinates(Milton_storm_data)[,2], 
+  x=st_coordinates(Milton_storm_data)[,1]),bins=100)+
+  scale_fill_distiller(palette="YlOrRd", 
+  trans="log", direction=-1, breaks = c(1,10,100,1000))+
+  coord_sf(ylim=region[c(2,4)], xlim=region[c(1,3)])
+
+
+
+
+
+
+#install both "hurricaneexposure" &"hurricaneexposuredata" packages for the functions to run
+data("hurr_tracks")
+head(hurr_tracks)
+data("storm_events")
+head(storm_events)
+
+#provides tracks for the hurricanes that occurred
+
+library(dplyr)
+library(tidyr)
+storms_all <- hurr_tracks %>%
+  select(storm_id) %>%
+  distinct() %>%
+  mutate(year = stringr::str_extract(storm_id, "-[0-9].+")) %>%
+  filter(year <= 2018)
+map_tracks((storms = storms_all$storm_id),
+alpha = 0.5, plot_points = TRUE, color = "blue")
+
+
+
+
+Gulf_Ariene_1993 <-map_tracks(storms = "Ariene-1993")
+
+Gulf_Dean_1995 <-map_tracks(storms = "Dean-1995")
+
+Gulf_Bret_1999 <-map_tracks(storms = "Bret-1999")
+
+Gulf_Allison_2001 <-map_tracks(storms = "Allison-2001")
+
+Gulf_Don_2011 <-map_tracks(storms = "Don-2011")
+
+Gulf_Ingrid_2013 <-map_tracks(storms = "Ingrid-2013")
+
+Gulf_Bill_2015 <-map_tracks(storms = "Bill-2015")
+
+Gulf_Helene_2000 <-map_tracks(storms = "Helene-2000")
+
+
+Gulf_1989 <- map_tracks(storms = c("Allison-1989", "Chantal-1989", "Jerry-1989"),
+           alpha = 0.5, plot_points = TRUE, color = "blue")
+
+Gulf_1998 <- map_tracks(storms = c("Charley-1998", "Frances-1998"),
+         alpha = 0.5, plot_points = TRUE, color = "blue")
+
+Gulf_2002 <- map_tracks(storms = c("Bertha-2002", "Fay-2002"),
+           alpha = 0.5, plot_points = TRUE, color = "blue")
+
+Gulf_2003 <- map_tracks(storms = c("Claudette-2003", "Erika-2003","Grace-2003"),
+           alpha = 0.5, plot_points = TRUE, color = "blue")
+
+Gulf_2005 <- map_tracks(storms = c("Emily-2005", "Rita-2005"),
+           alpha = 0.5, plot_points = TRUE, color = "blue")
+
+Gulf_2007 <- map_tracks(storms = c("Erin-2007", "Humberto-2007"),
+           alpha = 0.5, plot_points = TRUE, color = "blue")
+
+Gulf_2008 <- map_tracks(storms = c("Dolly-2008", "Eduoard-2008","Ike-2008"),
+           alpha = 0.5, plot_points = TRUE, color = "blue")
+
+Gulf_2010 <- map_tracks(storms = c("Alex-2010", "Hermine-2010"),
+           alpha = 0.5, plot_points = TRUE, color = "blue")
+
+Gulf_2017 <- map_tracks(storms = c("Cindy-2017", "Harvey-2017"),
+           alpha = 0.5, plot_points = TRUE, color = "blue")
+
+
+
+
+
+
+
+
+
+
+
+
 
 ```{r}
 n=20
