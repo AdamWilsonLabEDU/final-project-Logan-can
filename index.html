@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Your name here">
-<meta name="dcterms.date" content="2024-11-09">
+<meta name="dcterms.date" content="2024-11-10">
 
 <title>My Final Project Template – GEO511_FinalProject</title>
 <style>
@@ -185,7 +185,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 9, 2024</p>
+      <p class="date">November 10, 2024</p>
     </div>
   </div>
   
@@ -199,7 +199,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
-<p>Hurricane Milton was a very unusually hurricane in the path it took throughout the Gulf of Mexico, through Florida, and then through the Atlantic when compared to other hurricanes during 2024, with hurricane Helene also being an odd hurricane in the path it took through the continental United States as well. Because of the abnormalities of Milton, I intend to analyze the track of Hurricane Milton through the Gulf of Mexico in comparison to other hurricanes and tropical storm that occurred in the Gulf of Mexico, and via the storm tracks and storm events such as rain and wind measurements of hurricanes from the past 20+ years. In order of doing this, I will be referring to different hurricane records taken from NOAA’s Historical Hurricanes and Tropical systems webpage, the CRAN Hurricane Exposure package and NOAA’s Historical Hurricane Tracks webpage, along with the in class lab’s data set from NOAA’s international-best-track-archive-for-climate-stewardship-ibtracs, as one of the beast means of analysis for the possible change sin strength of hurricane Milton when compared to these other hurricanes. With this, I will also be referring to the Intergovernmental Panel on Climate Change (IPCC) 2022 Sixth Assessment Report to make assessments of the possible strength future hurricanes and tropical storms may have, based on projections about climate change that are listed within the report.</p>
+<p>#Hurricane Milton was a very unusually hurricane in the path it took throughout the Gulf of Mexico, #through Florida, and then through the Atlantic when compared to other hurricanes during 2024, #with hurricane Helene also being an odd hurricane in the path it took through the continental United States as well. #Because of the abnormalities of Milton, I intend to analyze the track of Hurricane Milton through the Gulf of Mexico in comparison to other hurricanes and tropical storm that occurred in the Gulf of Mexico, #and via the storm tracks and storm events such as rain and wind measurements of hurricanes from the past 20+ years. #In order of doing this, I will be referring to different hurricane records taken from NOAA’s Historical Hurricanes and Tropical systems webpage, #the CRAN Hurricane Exposure package and NOAA’s Historical Hurricane Tracks webpage, along with the in class lab’s data set #from NOAA’s international-best-track-archive-for-climate-stewardship-ibtracs, #as one of the beast means of analysis for the possible changes in strength of hurricane Milton when compared to these other hurricanes. #With this, I will also be referring to the Intergovernmental Panel on Climate Change (IPCC) 2022 Sixth Assessment Report to make assessments of the possible strength future hurricanes and tropical storms may have, #based on projections about climate change that are listed within the report.</p>
 </section>
 <section id="materials-and-methods" class="level1">
 <h1>Materials and methods</h1>
@@ -237,6 +237,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="download-and-clean-all-required-data" class="level2">
 <h2 class="anchored" data-anchor-id="download-and-clean-all-required-data">Download and clean all required data</h2>
+<p>#SCRIPT</p>
+<p>library(drat) addRepo(“geanders”) install.packages(“hurricaneexposure”) install.packages(“hurricaneexposuredata”)</p>
+<p>library(sf) library(tidyverse) library(ggmap) library(spData) library(lubridate) library(hurricaneexposure) library(hurricaneexposuredata) data(world) data(us_states)</p>
+</section>
+</section>
+<section id="download-a-csv-from-noaa-with-storm-track-information" class="level1">
+<h1>Download a csv from noaa with storm track information</h1>
+<p>dataurl=“https://www.ncei.noaa.gov/data/international-best-track-archive-for-climate-stewardship-ibtracs/v04r01/access/csv/ibtracs.NA.list.v04r01.csv”</p>
+<p>storm_data &lt;- read_csv(dataurl)</p>
+<p>storm_data_new &lt;- storm_data%&gt;% mutate(year = year(ISO_TIME))%&gt;% filter(year &gt;= 2000) %&gt;% mutate_if(is.numeric, function(x) ifelse(x==-999.0,NA,x)) %&gt;% mutate(decade=(floor(year/10)*10))</p>
+<p>sf_storm_data &lt;- storm_data_new %&gt;% st_as_sf(coords=c(“LON”,“LAT”),crs=4326, remove = FALSE)</p>
+<p>region &lt;- st_bbox(sf_storm_data)</p>
+<p>ggplot(data = world)+ geom_sf()+ stat_bin2d(data=storm_data_new, aes(y=st_coordinates(sf_storm_data)[,2], x=st_coordinates(sf_storm_data)[,1]),bins=100)+ facet_wrap(~decade)+ scale_fill_distiller(palette=“YlOrRd”, trans=“log”, direction=-1, breaks = c(1,10,100,1000))+ coord_sf(ylim=region[c(2,4)], xlim=region[c(1,3)])</p>
+<p>#26055, 26109 Milton_storm &lt;- storm_data_new %&gt;% mutate(year = year(ISO_TIME))%&gt;% filter(year == 2024)%&gt;% filter(NUMBER == 71)</p>
+<p>Milton_storm_data &lt;- Milton_storm %&gt;% st_as_sf(coords=c(“LON”,“LAT”),crs=4326, remove = FALSE)</p>
+<p>region &lt;- st_bbox(Milton_storm_data)</p>
+<p>ggplot(data = world)+ geom_sf() + stat_bin2d(data=Milton_storm_data, aes(y=st_coordinates(Milton_storm_data)[,2], x=st_coordinates(Milton_storm_data)[,1]),bins=100)+ scale_fill_distiller(palette=“YlOrRd”, trans=“log”, direction=-1, breaks = c(1,10,100,1000))+ coord_sf(ylim=region[c(2,4)], xlim=region[c(1,3)])</p>
+<p>#install both “hurricaneexposure” &amp;“hurricaneexposuredata” packages for the functions to run data(“hurr_tracks”) head(hurr_tracks) data(“storm_events”) head(storm_events)</p>
+<p>#provides tracks for the hurricanes that occurred</p>
+<p>library(dplyr) library(tidyr) storms_all &lt;- hurr_tracks %&gt;% select(storm_id) %&gt;% distinct() %&gt;% mutate(year = stringr::str_extract(storm_id, “-[0-9].+”)) %&gt;% filter(year &lt;= 2018) map_tracks((storms = storms_all$storm_id), alpha = 0.5, plot_points = TRUE, color = “blue”)</p>
+<p>Gulf_Ariene_1993 &lt;-map_tracks(storms = “Ariene-1993”)</p>
+<p>Gulf_Dean_1995 &lt;-map_tracks(storms = “Dean-1995”)</p>
+<p>Gulf_Bret_1999 &lt;-map_tracks(storms = “Bret-1999”)</p>
+<p>Gulf_Allison_2001 &lt;-map_tracks(storms = “Allison-2001”)</p>
+<p>Gulf_Don_2011 &lt;-map_tracks(storms = “Don-2011”)</p>
+<p>Gulf_Ingrid_2013 &lt;-map_tracks(storms = “Ingrid-2013”)</p>
+<p>Gulf_Bill_2015 &lt;-map_tracks(storms = “Bill-2015”)</p>
+<p>Gulf_Helene_2000 &lt;-map_tracks(storms = “Helene-2000”)</p>
+<p>Gulf_1989 &lt;- map_tracks(storms = c(“Allison-1989”, “Chantal-1989”, “Jerry-1989”), alpha = 0.5, plot_points = TRUE, color = “blue”)</p>
+<p>Gulf_1998 &lt;- map_tracks(storms = c(“Charley-1998”, “Frances-1998”), alpha = 0.5, plot_points = TRUE, color = “blue”)</p>
+<p>Gulf_2002 &lt;- map_tracks(storms = c(“Bertha-2002”, “Fay-2002”), alpha = 0.5, plot_points = TRUE, color = “blue”)</p>
+<p>Gulf_2003 &lt;- map_tracks(storms = c(“Claudette-2003”, “Erika-2003”,“Grace-2003”), alpha = 0.5, plot_points = TRUE, color = “blue”)</p>
+<p>Gulf_2005 &lt;- map_tracks(storms = c(“Emily-2005”, “Rita-2005”), alpha = 0.5, plot_points = TRUE, color = “blue”)</p>
+<p>Gulf_2007 &lt;- map_tracks(storms = c(“Erin-2007”, “Humberto-2007”), alpha = 0.5, plot_points = TRUE, color = “blue”)</p>
+<p>Gulf_2008 &lt;- map_tracks(storms = c(“Dolly-2008”, “Eduoard-2008”,“Ike-2008”), alpha = 0.5, plot_points = TRUE, color = “blue”)</p>
+<p>Gulf_2010 &lt;- map_tracks(storms = c(“Alex-2010”, “Hermine-2010”), alpha = 0.5, plot_points = TRUE, color = “blue”)</p>
+<p>Gulf_2017 &lt;- map_tracks(storms = c(“Cindy-2017”, “Harvey-2017”), alpha = 0.5, plot_points = TRUE, color = “blue”)</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">=</span><span class="dv">20</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>data<span class="ot">=</span><span class="fu">data.frame</span>(<span class="at">x=</span><span class="fu">runif</span>(n,<span class="sc">-</span><span class="dv">180</span>,<span class="dv">180</span>),</span>
@@ -265,74 +302,74 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;">25.25</td>
-<td style="text-align: center;">42.04</td>
-<td style="text-align: center;">14.74</td>
-<td style="text-align: center;">c</td>
-<td style="text-align: center;">-0.88</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">-133.31</td>
-<td style="text-align: center;">-12.84</td>
-<td style="text-align: center;">16.66</td>
+<td style="text-align: center;">-175.61</td>
+<td style="text-align: center;">14.61</td>
+<td style="text-align: center;">14.83</td>
 <td style="text-align: center;">d</td>
-<td style="text-align: center;">-0.38</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">-9.24</td>
-<td style="text-align: center;">-19.69</td>
-<td style="text-align: center;">16.32</td>
-<td style="text-align: center;">e</td>
-<td style="text-align: center;">-0.30</td>
+<td style="text-align: center;">-0.28</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">128.57</td>
-<td style="text-align: center;">-56.33</td>
-<td style="text-align: center;">10.25</td>
-<td style="text-align: center;">e</td>
-<td style="text-align: center;">-1.10</td>
+<td style="text-align: center;">-102.00</td>
+<td style="text-align: center;">12.29</td>
+<td style="text-align: center;">19.36</td>
+<td style="text-align: center;">b</td>
+<td style="text-align: center;">1.31</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">118.08</td>
-<td style="text-align: center;">-16.57</td>
-<td style="text-align: center;">8.53</td>
-<td style="text-align: center;">e</td>
-<td style="text-align: center;">-0.25</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">-89.45</td>
-<td style="text-align: center;">-6.57</td>
-<td style="text-align: center;">9.52</td>
-<td style="text-align: center;">c</td>
-<td style="text-align: center;">0.22</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">-116.31</td>
-<td style="text-align: center;">-19.11</td>
-<td style="text-align: center;">5.22</td>
+<td style="text-align: center;">16.76</td>
+<td style="text-align: center;">-45.66</td>
+<td style="text-align: center;">17.48</td>
 <td style="text-align: center;">a</td>
-<td style="text-align: center;">-0.75</td>
+<td style="text-align: center;">-1.09</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">-119.44</td>
-<td style="text-align: center;">11.18</td>
-<td style="text-align: center;">6.67</td>
+<td style="text-align: center;">155.23</td>
+<td style="text-align: center;">36.73</td>
+<td style="text-align: center;">10.64</td>
 <td style="text-align: center;">d</td>
-<td style="text-align: center;">1.20</td>
+<td style="text-align: center;">-0.95</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">151.63</td>
-<td style="text-align: center;">3.04</td>
-<td style="text-align: center;">15.85</td>
+<td style="text-align: center;">-177.36</td>
+<td style="text-align: center;">42.90</td>
+<td style="text-align: center;">13.98</td>
 <td style="text-align: center;">c</td>
-<td style="text-align: center;">0.42</td>
+<td style="text-align: center;">-1.00</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">167.27</td>
-<td style="text-align: center;">-17.20</td>
-<td style="text-align: center;">12.23</td>
+<td style="text-align: center;">133.33</td>
+<td style="text-align: center;">13.82</td>
+<td style="text-align: center;">6.07</td>
+<td style="text-align: center;">c</td>
+<td style="text-align: center;">-0.44</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">-122.68</td>
+<td style="text-align: center;">-40.51</td>
+<td style="text-align: center;">16.80</td>
+<td style="text-align: center;">e</td>
+<td style="text-align: center;">0.89</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">173.05</td>
+<td style="text-align: center;">43.79</td>
+<td style="text-align: center;">11.88</td>
 <td style="text-align: center;">a</td>
-<td style="text-align: center;">-1.19</td>
+<td style="text-align: center;">1.66</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">131.85</td>
+<td style="text-align: center;">17.72</td>
+<td style="text-align: center;">12.12</td>
+<td style="text-align: center;">d</td>
+<td style="text-align: center;">-0.31</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">-142.90</td>
+<td style="text-align: center;">6.33</td>
+<td style="text-align: center;">12.76</td>
+<td style="text-align: center;">d</td>
+<td style="text-align: center;">-0.54</td>
 </tr>
 </tbody>
 </table>
@@ -340,7 +377,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>Add any additional processing steps here.</p>
-</section>
 </section>
 <section id="results" class="level1">
 <h1>Results</h1>
@@ -354,8 +390,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addPopups</span>(<span class="sc">~</span>x[<span class="dv">2</span>], <span class="sc">~</span>y[<span class="dv">2</span>], <span class="st">"Random popup"</span>)</span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>m  <span class="co"># a map with the default OSM tile layer</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div class="leaflet html-widget html-fill-item" id="htmlwidget-4b286e2ab1c89b15b603" style="width:100%;height:325px;"></div>
-<script type="application/json" data-for="htmlwidget-4b286e2ab1c89b15b603">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addCircleMarkers","args":[[42.03814018517733,-12.83897132612765,-19.69325233250856,-56.32890927605331,-16.56726063229144,-6.56572574749589,-19.10895575769246,11.17715600878,3.04267362691462,-17.20129106193781,30.13962236233056,2.191876955330372,54.30655335076153,-30.74905363842845,44.84964642673731,41.9726999849081,48.41022175736725,0.6425495445728302,-4.049542341381311,54.24403418786824],[25.24783872999251,-133.3095816895366,-9.244010830298066,128.5694121010602,118.0824926029891,-89.44752713665366,-116.3109335303307,-119.4400219526142,151.6340455971658,167.267427239567,-76.08909074217081,136.7075709532946,-151.3233163766563,109.3598539195955,119.1770881041884,-141.7756562680006,30.47510921023786,-11.42447560094297,-108.5490017663687,136.1915603745729],[14.74425835651346,16.66377631365322,16.31988878012635,10.25062112137675,8.525992502691224,9.519587439717725,5.217095385305583,6.671994670759887,15.85428945720196,12.23168040858582,16.74127644160762,7.62124624219723,13.55958201107569,7.232792017748579,6.693770247511566,7.294843969866633,16.04155600303784,19.93461178150028,13.72603836585768,19.05596509459428],null,null,{"interactive":true,"className":"","stroke":true,"color":["c","d","e","e","e","c","a","d","c","a","b","d","d","d","b","a","d","c","a","d"],"weight":5,"opacity":0.5,"fill":true,"fillColor":["c","d","e","e","e","c","a","d","c","a","b","d","d","d","b","a","d","c","a","d"],"fillOpacity":0.2},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addPopups","args":[-12.83897132612765,-133.3095816895366,"Random popup",null,null,{"maxWidth":300,"minWidth":50,"autoPan":true,"keepInView":false,"closeButton":true,"className":""}]}],"limits":{"lat":[-56.32890927605331,54.30655335076153],"lng":[-151.3233163766563,167.267427239567]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-a86ff4ddb4f8c24c6c8d" style="width:100%;height:325px;"></div>
+<script type="application/json" data-for="htmlwidget-a86ff4ddb4f8c24c6c8d">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addCircleMarkers","args":[[14.60692268796265,12.28601574897766,-45.65851958468556,36.72723926603794,42.90274187922478,13.82247568108141,-40.51243370398879,43.78938381560147,17.72411744110286,6.333241509273648,21.24058797955513,-37.90906461887062,58.24386619962752,9.038551300764084,-0.6504520308226347,42.16502903960645,38.53911551646888,-43.45259182155132,-31.33863754570484,27.25138435140252],[-175.608246428892,-101.9995559658855,16.76168697886169,155.2285278774798,-177.3557247966528,133.3345678076148,-122.6797107607126,173.0504449736327,131.845509884879,-142.9012959077954,-138.4029292222112,42.75326228700578,-29.72202840261161,-170.2222591638565,-145.4847795143723,-22.04227675683796,21.07706758193672,158.7576863821596,44.83617662452161,-165.1971000060439],[14.82849242514931,19.35779883526266,17.48030600138009,10.64043469494209,13.98139141849242,6.065272111445665,16.80035539553501,11.88453233218752,12.12457463727333,12.75767647777684,16.27745295758359,15.33488010056317,5.688492585904896,19.40714975236915,19.12987457937561,6.853986739879474,16.46218433743343,10.44796227477491,9.677149383351207,13.72695901314728],null,null,{"interactive":true,"className":"","stroke":true,"color":["d","b","a","d","c","c","e","a","d","d","b","d","e","a","d","a","d","a","b","b"],"weight":5,"opacity":0.5,"fill":true,"fillColor":["d","b","a","d","c","c","e","a","d","d","b","d","e","a","d","a","d","a","b","b"],"fillOpacity":0.2},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addPopups","args":[12.28601574897766,-101.9995559658855,"Random popup",null,null,{"maxWidth":300,"minWidth":50,"autoPan":true,"keepInView":false,"closeButton":true,"className":""}]}],"limits":{"lat":[-45.65851958468556,58.24386619962752],"lng":[-177.3557247966528,173.0504449736327]}},"evals":[],"jsHooks":[]}</script>
 <p>Map of completely random data</p>
 </div>
 </div>
@@ -378,8 +414,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dygraph</span>(nhtemp, <span class="at">main =</span> <span class="st">"New Haven Temperatures"</span>) <span class="sc">|&gt;</span> </span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dyRangeSelector</span>(<span class="at">dateWindow =</span> <span class="fu">c</span>(<span class="st">"1920-01-01"</span>, <span class="st">"1960-01-01"</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div class="dygraphs html-widget html-fill-item" id="htmlwidget-1fae99eb1088cb05c6dd" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-1fae99eb1088cb05c6dd">{"x":{"attrs":{"title":"New Haven Temperatures","labels":["year","V1"],"legend":"auto","retainDateWindow":false,"axes":{"x":{"pixelsPerLabel":60}},"showRangeSelector":true,"dateWindow":["1920-01-01T00:00:00.000Z","1960-01-01T00:00:00.000Z"],"rangeSelectorHeight":40,"rangeSelectorPlotFillColor":" #A7B1C4","rangeSelectorPlotStrokeColor":"#808FAB","interactionModel":"Dygraph.Interaction.defaultModel"},"scale":"yearly","annotations":[],"shadings":[],"events":[],"format":"date","data":[["1912-01-01T00:00:00.000Z","1913-01-01T00:00:00.000Z","1914-01-01T00:00:00.000Z","1915-01-01T00:00:00.000Z","1916-01-01T00:00:00.000Z","1917-01-01T00:00:00.000Z","1918-01-01T00:00:00.000Z","1919-01-01T00:00:00.000Z","1920-01-01T00:00:00.000Z","1921-01-01T00:00:00.000Z","1922-01-01T00:00:00.000Z","1923-01-01T00:00:00.000Z","1924-01-01T00:00:00.000Z","1925-01-01T00:00:00.000Z","1926-01-01T00:00:00.000Z","1927-01-01T00:00:00.000Z","1928-01-01T00:00:00.000Z","1929-01-01T00:00:00.000Z","1930-01-01T00:00:00.000Z","1931-01-01T00:00:00.000Z","1932-01-01T00:00:00.000Z","1933-01-01T00:00:00.000Z","1934-01-01T00:00:00.000Z","1935-01-01T00:00:00.000Z","1936-01-01T00:00:00.000Z","1937-01-01T00:00:00.000Z","1938-01-01T00:00:00.000Z","1939-01-01T00:00:00.000Z","1940-01-01T00:00:00.000Z","1941-01-01T00:00:00.000Z","1942-01-01T00:00:00.000Z","1943-01-01T00:00:00.000Z","1944-01-01T00:00:00.000Z","1945-01-01T00:00:00.000Z","1946-01-01T00:00:00.000Z","1947-01-01T00:00:00.000Z","1948-01-01T00:00:00.000Z","1949-01-01T00:00:00.000Z","1950-01-01T00:00:00.000Z","1951-01-01T00:00:00.000Z","1952-01-01T00:00:00.000Z","1953-01-01T00:00:00.000Z","1954-01-01T00:00:00.000Z","1955-01-01T00:00:00.000Z","1956-01-01T00:00:00.000Z","1957-01-01T00:00:00.000Z","1958-01-01T00:00:00.000Z","1959-01-01T00:00:00.000Z","1960-01-01T00:00:00.000Z","1961-01-01T00:00:00.000Z","1962-01-01T00:00:00.000Z","1963-01-01T00:00:00.000Z","1964-01-01T00:00:00.000Z","1965-01-01T00:00:00.000Z","1966-01-01T00:00:00.000Z","1967-01-01T00:00:00.000Z","1968-01-01T00:00:00.000Z","1969-01-01T00:00:00.000Z","1970-01-01T00:00:00.000Z","1971-01-01T00:00:00.000Z"],[49.9,52.3,49.4,51.1,49.4,47.9,49.8,50.9,49.3,51.9,50.8,49.6,49.3,50.6,48.4,50.7,50.9,50.6,51.5,52.8,51.8,51.1,49.8,50.2,50.4,51.6,51.8,50.9,48.8,51.7,51,50.6,51.7,51.5,52.1,51.3,51,54,51.4,52.7,53.1,54.6,52,52,50.9,52.6,50.2,52.6,51.6,51.9,50.5,50.9,51.7,51.4,51.7,50.8,51.9,51.8,51.9,53]]},"evals":["attrs.interactionModel"],"jsHooks":[]}</script>
+<div class="dygraphs html-widget html-fill-item" id="htmlwidget-3021a4173deb64e3fa46" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-3021a4173deb64e3fa46">{"x":{"attrs":{"title":"New Haven Temperatures","labels":["year","V1"],"legend":"auto","retainDateWindow":false,"axes":{"x":{"pixelsPerLabel":60}},"showRangeSelector":true,"dateWindow":["1920-01-01T00:00:00.000Z","1960-01-01T00:00:00.000Z"],"rangeSelectorHeight":40,"rangeSelectorPlotFillColor":" #A7B1C4","rangeSelectorPlotStrokeColor":"#808FAB","interactionModel":"Dygraph.Interaction.defaultModel"},"scale":"yearly","annotations":[],"shadings":[],"events":[],"format":"date","data":[["1912-01-01T00:00:00.000Z","1913-01-01T00:00:00.000Z","1914-01-01T00:00:00.000Z","1915-01-01T00:00:00.000Z","1916-01-01T00:00:00.000Z","1917-01-01T00:00:00.000Z","1918-01-01T00:00:00.000Z","1919-01-01T00:00:00.000Z","1920-01-01T00:00:00.000Z","1921-01-01T00:00:00.000Z","1922-01-01T00:00:00.000Z","1923-01-01T00:00:00.000Z","1924-01-01T00:00:00.000Z","1925-01-01T00:00:00.000Z","1926-01-01T00:00:00.000Z","1927-01-01T00:00:00.000Z","1928-01-01T00:00:00.000Z","1929-01-01T00:00:00.000Z","1930-01-01T00:00:00.000Z","1931-01-01T00:00:00.000Z","1932-01-01T00:00:00.000Z","1933-01-01T00:00:00.000Z","1934-01-01T00:00:00.000Z","1935-01-01T00:00:00.000Z","1936-01-01T00:00:00.000Z","1937-01-01T00:00:00.000Z","1938-01-01T00:00:00.000Z","1939-01-01T00:00:00.000Z","1940-01-01T00:00:00.000Z","1941-01-01T00:00:00.000Z","1942-01-01T00:00:00.000Z","1943-01-01T00:00:00.000Z","1944-01-01T00:00:00.000Z","1945-01-01T00:00:00.000Z","1946-01-01T00:00:00.000Z","1947-01-01T00:00:00.000Z","1948-01-01T00:00:00.000Z","1949-01-01T00:00:00.000Z","1950-01-01T00:00:00.000Z","1951-01-01T00:00:00.000Z","1952-01-01T00:00:00.000Z","1953-01-01T00:00:00.000Z","1954-01-01T00:00:00.000Z","1955-01-01T00:00:00.000Z","1956-01-01T00:00:00.000Z","1957-01-01T00:00:00.000Z","1958-01-01T00:00:00.000Z","1959-01-01T00:00:00.000Z","1960-01-01T00:00:00.000Z","1961-01-01T00:00:00.000Z","1962-01-01T00:00:00.000Z","1963-01-01T00:00:00.000Z","1964-01-01T00:00:00.000Z","1965-01-01T00:00:00.000Z","1966-01-01T00:00:00.000Z","1967-01-01T00:00:00.000Z","1968-01-01T00:00:00.000Z","1969-01-01T00:00:00.000Z","1970-01-01T00:00:00.000Z","1971-01-01T00:00:00.000Z"],[49.9,52.3,49.4,51.1,49.4,47.9,49.8,50.9,49.3,51.9,50.8,49.6,49.3,50.6,48.4,50.7,50.9,50.6,51.5,52.8,51.8,51.1,49.8,50.2,50.4,51.6,51.8,50.9,48.8,51.7,51,50.6,51.7,51.5,52.1,51.3,51,54,51.4,52.7,53.1,54.6,52,52,50.9,52.6,50.2,52.6,51.6,51.9,50.5,50.9,51.7,51.4,51.7,50.8,51.9,51.8,51.9,53]]},"evals":["attrs.interactionModel"],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
