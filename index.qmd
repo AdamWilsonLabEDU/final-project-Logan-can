@@ -38,6 +38,9 @@ Here's my first code chunk.
 
 ```{r}
 #SCRIPT
+if (!requireNamespace("drat", quietly = TRUE)) {
+    install.packages("drat")
+}
 
 library(drat)
 addRepo("geanders")
