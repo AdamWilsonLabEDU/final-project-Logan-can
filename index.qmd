@@ -50,6 +50,30 @@ if (!requireNamespace("sf", quietly = TRUE)) {
     install.packages("sf")
 }
 
+
+
+if (!requireNamespace("tidyverse", quietly = TRUE)) {
+    install.packages("tidyverse")
+}
+if (!requireNamespace("ggmap", quietly = TRUE)) {
+    install.packages("ggmap")
+}
+if (!requireNamespace("spData", quietly = TRUE)) {
+    install.packages("spData")
+}
+if (!requireNamespace("lubridate", quietly = TRUE)) {
+    install.packages("lubridate")
+}
+if (!requireNamespace("hurricaneexposure", quietly = TRUE)) {
+    install.packages("hurricaneexposure")
+}
+if (!requireNamespace("hurricaneexposuredata", quietly = TRUE)) {
+    install.packages("hurricaneexposuredata")
+}
+if (!requireNamespace("tmap", quietly = TRUE)) {
+    install.packages("tmap")
+}
+
 library(sf)
 library(tidyverse)
 library(ggmap)
