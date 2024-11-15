@@ -46,6 +46,9 @@ library(drat)
 addRepo("geanders")
 install.packages("hurricaneexposure") 
 install.packages("hurricaneexposuredata")
+if (!requireNamespace("sf", quietly = TRUE)) {
+    install.packages("sf")
+}
 
 library(sf)
 library(tidyverse)
