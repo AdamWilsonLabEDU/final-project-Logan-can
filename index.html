@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Your name here">
-<meta name="dcterms.date" content="2024-11-10">
+<meta name="author" content="Logan Hales">
+<meta name="dcterms.date" content="2024-11-15">
 
-<title>My Final Project Template – GEO511_FinalProject</title>
+<title>Hurricane Milton Abnormality – GEO511_FinalProject</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -102,25 +102,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
-<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
-<link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
-<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
-<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-<link href="site_libs/leaflet-1.3.1/leaflet.css" rel="stylesheet">
-<script src="site_libs/leaflet-1.3.1/leaflet.js"></script>
-<link href="site_libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet">
-<script src="site_libs/proj4-2.6.2/proj4.min.js"></script>
-<script src="site_libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
-<link href="site_libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet">
-<script src="site_libs/leaflet-binding-2.2.2/leaflet.js"></script>
-<link href="site_libs/dygraphs-1.1.1/dygraph.css" rel="stylesheet">
-<script src="site_libs/dygraphs-1.1.1/dygraph-combined.js"></script>
-<script src="site_libs/dygraphs-1.1.1/shapes.js"></script>
-<script src="site_libs/moment-2.8.4/moment.js"></script>
-<script src="site_libs/moment-timezone-0.2.5/moment-timezone-with-data.js"></script>
-<script src="site_libs/moment-fquarter-1.0.0/moment-fquarter.min.js"></script>
-<script src="site_libs/dygraphs-binding-1.1.1.6/dygraphs.js"></script>
 
 
 </head>
@@ -167,8 +148,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">My Final Project Template</h1>
-<p class="subtitle lead">Subtitle here if desired</p>
+<h1 class="title">Hurricane Milton Abnormality</h1>
+<p class="subtitle lead">Hurricanes</p>
 </div>
 
 
@@ -178,14 +159,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Your name here </p>
+             <p>Logan Hales </p>
           </div>
   </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 10, 2024</p>
+      <p class="date">November 15, 2024</p>
     </div>
   </div>
   
@@ -199,7 +180,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
-<p>#Hurricane Milton was a very unusually hurricane in the path it took throughout the Gulf of Mexico, #through Florida, and then through the Atlantic when compared to other hurricanes during 2024, #with hurricane Helene also being an odd hurricane in the path it took through the continental United States as well. #Because of the abnormalities of Milton, I intend to analyze the track of Hurricane Milton through the Gulf of Mexico in comparison to other hurricanes and tropical storm that occurred in the Gulf of Mexico, #and via the storm tracks and storm events such as rain and wind measurements of hurricanes from the past 20+ years. #In order of doing this, I will be referring to different hurricane records taken from NOAA’s Historical Hurricanes and Tropical systems webpage, #the CRAN Hurricane Exposure package and NOAA’s Historical Hurricane Tracks webpage, along with the in class lab’s data set #from NOAA’s international-best-track-archive-for-climate-stewardship-ibtracs, #as one of the beast means of analysis for the possible changes in strength of hurricane Milton when compared to these other hurricanes. #With this, I will also be referring to the Intergovernmental Panel on Climate Change (IPCC) 2022 Sixth Assessment Report to make assessments of the possible strength future hurricanes and tropical storms may have, #based on projections about climate change that are listed within the report.</p>
+<p>#Hurricane Milton was an abnormal hurricane in the path it took throughout the Gulf of Mexico, Florida, and in the Atlantic Ocean when compared to other hurricanes during 2024, and in previous hurricane storm season as well. Because of this, I intend to analyze the track of Hurricane Milton through the Gulf of Mexico in comparison to other hurricanes and tropical storm that occurred in the Gulf of Mexico, and via the storm tracks and storm events such as rain and wind measurements of hurricanes from the past 20+ years. In order of doing this, I will be referring to different hurricane records taken from NOAA’s Historical Hurricanes and Tropical systems webpage, the CRAN Hurricane Exposure package and NOAA’s Historical Hurricane Tracks webpage, along with the in class lab’s data set from NOAA’s international-best-track-archive-for-climate-stewardship-ibtracs, as one of the beast means of analysis for the possible change sin strength of hurricane Milton when compared to these other hurricanes. With this, I will also be referring to the Intergovernmental Panel on Climate Change (IPCC) 2022 Sixth Assessment Report to make assessments of the possible strength future hurricanes and tropical storms may have, based on projections about climate change that are listed within the report.</p>
 </section>
 <section id="materials-and-methods" class="level1">
 <h1>Materials and methods</h1>
@@ -222,202 +203,500 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>See <a href="http://rmarkdown.rstudio.com/" class="uri">http://rmarkdown.rstudio.com/</a> for all the amazing things you can do.</p>
 <p>Here’s my first code chunk.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x<span class="ot">=</span><span class="dv">3</span><span class="sc">+</span><span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#SCRIPT</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">"drat"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)) {</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">install.packages</span>(<span class="st">"drat"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># Downloading packages -------------------------------------------------------
+- Downloading drat from CRAN ...                OK [197.3 Kb in 0.43s]
+Successfully downloaded 1 package in 1.6 seconds.
+
+The following package(s) will be installed:
+- drat [0.2.5]
+These packages will be installed into "~/work/final-project-Logan-can/final-project-Logan-can/renv/library/linux-ubuntu-jammy/R-4.4/x86_64-pc-linux-gnu".
+
+# Installing packages --------------------------------------------------------
+- Installing drat ...                           OK [installed binary and cached in 0.22s]
+Successfully installed 1 package in 0.31 seconds.</code></pre>
 </div>
-<p>Refer to output in your narrative like this: x=7 .</p>
-<p>Load any required packages in a code chunk (you may need to install some packages):</p>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(drat)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">addRepo</span>(<span class="st">"geanders"</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"hurricaneexposure"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># Downloading packages -------------------------------------------------------
+- Downloading hurricaneexposure from CRAN ...   OK [1.9 Mb in 0.65s]
+- Downloading ggmap from CRAN ...               OK [4.5 Mb in 0.52s]
+- Downloading plyr from CRAN ...                OK [768 Kb in 0.47s]
+- Downloading jpeg from CRAN ...                OK [28.6 Kb in 0.37s]
+- Downloading bitops from CRAN ...              OK [25.4 Kb in 0.4s]
+- Downloading mapproj from CRAN ...             OK [50.4 Kb in 0.43s]
+- Downloading maps from CRAN ...                OK [2.9 Mb in 0.46s]
+Successfully downloaded 7 packages in 5.6 seconds.
+
+The following package(s) will be installed:
+- bitops            [1.0-9]
+- ggmap             [4.0.0]
+- hurricaneexposure [0.1.1]
+- jpeg              [0.1-10]
+- mapproj           [1.2.11]
+- maps              [3.4.2.1]
+- plyr              [1.8.9]
+These packages will be installed into "~/work/final-project-Logan-can/final-project-Logan-can/renv/library/linux-ubuntu-jammy/R-4.4/x86_64-pc-linux-gnu".
+
+# Installing packages --------------------------------------------------------
+- Installing plyr ...                           OK [installed binary and cached in 0.29s]
+- Installing jpeg ...                           OK [installed binary and cached in 0.21s]
+- Installing bitops ...                         OK [installed binary and cached in 0.2s]
+- Installing ggmap ...                          OK [installed binary and cached in 0.82s]
+- Installing maps ...                           OK [installed binary and cached in 0.27s]
+- Installing mapproj ...                        OK [installed binary and cached in 0.21s]
+- Installing hurricaneexposure ...              OK [installed binary and cached in 0.58s]
+Successfully installed 7 packages in 2.8 seconds.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"hurricaneexposuredata"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># Downloading packages -------------------------------------------------------
+- Downloading hurricaneexposuredata from geanders ... OK [14.4 Mb in 0.52s]
+Successfully downloaded 1 package in 0.84 seconds.
+
+The following package(s) will be installed:
+- hurricaneexposuredata [0.1.0]
+These packages will be installed into "~/work/final-project-Logan-can/final-project-Logan-can/renv/library/linux-ubuntu-jammy/R-4.4/x86_64-pc-linux-gnu".
+
+# Installing packages --------------------------------------------------------
+- Installing hurricaneexposuredata ...          OK [built from source and cached in 13s]
+Successfully installed 1 package in 13 seconds.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">"sf"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)) {</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">install.packages</span>(<span class="st">"sf"</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># Downloading packages -------------------------------------------------------
+- Downloading sf from CRAN ...                  OK [3.6 Mb in 0.38s]
+- Downloading classInt from CRAN ...            OK [487.3 Kb in 0.38s]
+- Downloading e1071 from CRAN ...               OK [582.2 Kb in 0.39s]
+- Downloading proxy from CRAN ...               OK [171.5 Kb in 0.38s]
+- Downloading s2 from CRAN ...                  OK [2.1 Mb in 0.39s]
+- Downloading wk from CRAN ...                  OK [1.7 Mb in 0.39s]
+- Downloading units from CRAN ...               OK [354.5 Kb in 0.4s]
+Successfully downloaded 7 packages in 3.7 seconds.
+
+The following package(s) will be installed:
+- classInt [0.4-10]
+- e1071    [1.7-16]
+- proxy    [0.4-27]
+- s2       [1.1.7]
+- sf       [1.0-19]
+- units    [0.8-5]
+- wk       [0.9.4]
+These packages will be installed into "~/work/final-project-Logan-can/final-project-Logan-can/renv/library/linux-ubuntu-jammy/R-4.4/x86_64-pc-linux-gnu".
+
+# Installing packages --------------------------------------------------------
+- Installing proxy ...                          OK [installed binary and cached in 0.2s]
+- Installing e1071 ...                          OK [installed binary and cached in 0.22s]
+- Installing classInt ...                       OK [installed binary and cached in 0.23s]
+- Installing wk ...                             OK [installed binary and cached in 0.24s]
+- Installing s2 ...                             OK [installed binary and cached in 0.34s]
+- Installing units ...                          OK [installed binary and cached in 0.31s]
+- Installing sf ...                             OK [installed binary and cached in 0.58s]
+Successfully installed 7 packages in 2.4 seconds.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">"tidyverse"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)) {</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">"ggmap"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)) {</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">install.packages</span>(<span class="st">"ggmap"</span>)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">"spData"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)) {</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">install.packages</span>(<span class="st">"spData"</span>)</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># Downloading packages -------------------------------------------------------
+- Downloading spData from CRAN ...              OK [4.3 Mb in 0.43s]
+Successfully downloaded 1 package in 0.64 seconds.
+
+The following package(s) will be installed:
+- spData [2.3.3]
+These packages will be installed into "~/work/final-project-Logan-can/final-project-Logan-can/renv/library/linux-ubuntu-jammy/R-4.4/x86_64-pc-linux-gnu".
+
+# Installing packages --------------------------------------------------------
+- Installing spData ...                         OK [installed binary and cached in 0.42s]
+Successfully installed 1 package in 0.49 seconds.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">"lubridate"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)) {</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">install.packages</span>(<span class="st">"lubridate"</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">"hurricaneexposure"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)) {</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">install.packages</span>(<span class="st">"hurricaneexposure"</span>)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">"hurricaneexposuredata"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)) {</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">install.packages</span>(<span class="st">"hurricaneexposuredata"</span>)</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">"tmap"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)) {</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">install.packages</span>(<span class="st">"tmap"</span>)</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># Downloading packages -------------------------------------------------------
+- Downloading tmap from CRAN ...                OK [3.6 Mb in 0.42s]
+- Downloading tmaptools from CRAN ...           OK [168.5 Kb in 0.39s]
+- Downloading lwgeom from CRAN ...              OK [468.5 Kb in 0.42s]
+- Downloading stars from CRAN ...               OK [4.3 Mb in 1.2s]
+- Downloading abind from CRAN ...               OK [63.6 Kb in 0.35s]
+- Downloading dichromat from CRAN ...           OK [143 Kb in 0.69s]
+- Downloading XML from CRAN ...                 OK [1.7 Mb in 0.4s]
+- Downloading leafsync from CRAN ...            OK [823.7 Kb in 0.39s]
+- Downloading leafem from CRAN ...              OK [3.4 Mb in 0.45s]
+- Downloading geojsonsf from CRAN ...           OK [1.6 Mb in 0.4s]
+- Downloading geometries from CRAN ...          OK [283.2 Kb in 0.38s]
+- Downloading jsonify from CRAN ...             OK [628.8 Kb in 0.43s]
+- Downloading rapidjsonr from CRAN ...          OK [126.4 Kb in 0.39s]
+- Downloading sfheaders from CRAN ...           OK [471.7 Kb in 0.72s]
+Successfully downloaded 14 packages in 9 seconds.
+
+The following package(s) will be installed:
+- abind      [1.4-8]
+- dichromat  [2.0-0.1]
+- geojsonsf  [2.0.3]
+- geometries [0.2.4]
+- jsonify    [1.2.2]
+- leafem     [0.2.3]
+- leafsync   [0.1.0]
+- lwgeom     [0.2-14]
+- rapidjsonr [1.2.0]
+- sfheaders  [0.4.4]
+- stars      [0.6-7]
+- tmap       [3.3-4]
+- tmaptools  [3.1-1]
+- XML        [3.99-0.17]
+These packages will be installed into "~/work/final-project-Logan-can/final-project-Logan-can/renv/library/linux-ubuntu-jammy/R-4.4/x86_64-pc-linux-gnu".
+
+# Installing packages --------------------------------------------------------
+- Installing lwgeom ...                         OK [installed binary and cached in 0.49s]
+- Installing abind ...                          OK [installed binary and cached in 0.21s]
+- Installing stars ...                          OK [installed binary and cached in 0.69s]
+- Installing dichromat ...                      OK [installed binary and cached in 0.2s]
+- Installing XML ...                            OK [installed binary and cached in 0.35s]
+- Installing tmaptools ...                      OK [installed binary and cached in 0.99s]
+- Installing leafsync ...                       OK [installed binary and cached in 0.21s]
+- Installing geometries ...                     OK [installed binary and cached in 0.29s]
+- Installing rapidjsonr ...                     OK [installed binary and cached in 0.22s]
+- Installing jsonify ...                        OK [installed binary and cached in 0.3s]
+- Installing sfheaders ...                      OK [installed binary and cached in 0.29s]
+- Installing geojsonsf ...                      OK [installed binary and cached in 0.3s]
+- Installing leafem ...                         OK [installed binary and cached in 4.0s]
+- Installing tmap ...                           OK [installed binary and cached in 4.2s]
+Successfully installed 14 packages in 13 seconds.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Linking to GEOS 3.10.2, GDAL 3.4.1, PROJ 8.2.1; sf_use_s2() is TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+✔ lubridate 1.9.3     ✔ tidyr     1.3.1
+✔ purrr     1.0.2     </code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggmap)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>ℹ Google's Terms of Service: &lt;https://mapsplatform.google.com&gt;
+  Stadia Maps' Terms of Service: &lt;https://stadiamaps.com/terms-of-service/&gt;
+  OpenStreetMap's Tile Usage Policy: &lt;https://operations.osmfoundation.org/policies/tiles/&gt;
+ℹ Please cite ggmap if you use it! Use `citation("ggmap")` for details.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(spData)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>To access larger datasets in this package, install the spDataLarge
+package with: `install.packages('spDataLarge',
+repos='https://nowosad.github.io/drat/', type='source')`</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(hurricaneexposure)</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(hurricaneexposuredata)</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(world)</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(us_states)</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tmap)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Breaking News: tmap 3.x is retiring. Please test v4, e.g. with
+remotes::install_github('r-tmap/tmap')</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Download a csv from noaa with storm track information</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>dataurl<span class="ot">=</span><span class="st">"https://www.ncei.noaa.gov/data/international-best-track-archive-for-climate-stewardship-ibtracs/v04r01/access/csv/ibtracs.NA.list.v04r01.csv"</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>storm_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(dataurl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 127165 Columns: 174
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (149): SID, SEASON, BASIN, SUBBASIN, NAME, NATURE, LAT, LON, WMO_WIND, ...
+dbl   (12): NUMBER, USA_SSHS, TOKYO_GRADE, TOKYO_LAND, CMA_CAT, NEWDELHI_CI,...
+lgl   (12): TOKYO_R50_DIR, TOKYO_R30_DIR, HKO_CAT, KMA_CAT, KMA_R50_DIR, KMA...
+dttm   (1): ISO_TIME
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+</div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(leaflet)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(htmlwidgets)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(widgetframe)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">widgetframe_widgets_dir =</span> <span class="st">'widgets'</span> ) </span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">cache=</span><span class="cn">TRUE</span>)  <span class="co"># cache the results for quick compiling</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>storm_data_new <span class="ot">&lt;-</span> storm_data<span class="sc">%&gt;%</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">year =</span> <span class="fu">year</span>(ISO_TIME))<span class="sc">%&gt;%</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">&gt;=</span> <span class="dv">2000</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate_if</span>(is.numeric, <span class="cf">function</span>(x) <span class="fu">ifelse</span>(x<span class="sc">==-</span><span class="fl">999.0</span>,<span class="cn">NA</span>,x)) <span class="sc">%&gt;%</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">decade=</span>(<span class="fu">floor</span>(year<span class="sc">/</span><span class="dv">10</span>)<span class="sc">*</span><span class="dv">10</span>))</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>sf_storm_data <span class="ot">&lt;-</span> storm_data_new <span class="sc">%&gt;%</span></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_as_sf</span>(<span class="at">coords=</span><span class="fu">c</span>(<span class="st">"LON"</span>,<span class="st">"LAT"</span>),<span class="at">crs=</span><span class="dv">4326</span>, <span class="at">remove =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>region <span class="ot">&lt;-</span> <span class="fu">st_bbox</span>(sf_storm_data)</span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> world)<span class="sc">+</span></span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>()<span class="sc">+</span></span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_bin2d</span>(<span class="at">data=</span>storm_data_new, <span class="fu">aes</span>(<span class="at">y=</span><span class="fu">st_coordinates</span>(sf_storm_data)[,<span class="dv">2</span>], <span class="at">x=</span><span class="fu">st_coordinates</span>(sf_storm_data)[,<span class="dv">1</span>]),<span class="at">bins=</span><span class="dv">100</span>)<span class="sc">+</span></span>
+<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>decade)<span class="sc">+</span></span>
+<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_distiller</span>(<span class="at">palette=</span><span class="st">"YlOrRd"</span>, <span class="at">trans=</span><span class="st">"log"</span>, <span class="at">direction=</span><span class="sc">-</span><span class="dv">1</span>, <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">10</span>,<span class="dv">100</span>,<span class="dv">1000</span>))<span class="sc">+</span></span>
+<span id="cb26-18"><a href="#cb26-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_sf</span>(<span class="at">ylim=</span>region[<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">4</span>)], <span class="at">xlim=</span>region[<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>)])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co">#26055, 26109</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>Milton_storm <span class="ot">&lt;-</span> storm_data_new <span class="sc">%&gt;%</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">year =</span> <span class="fu">year</span>(ISO_TIME))<span class="sc">%&gt;%</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2024</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(NUMBER <span class="sc">==</span> <span class="dv">71</span>)</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>Milton_storm_data <span class="ot">&lt;-</span> Milton_storm <span class="sc">%&gt;%</span></span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_as_sf</span>(<span class="at">coords=</span><span class="fu">c</span>(<span class="st">"LON"</span>,<span class="st">"LAT"</span>),<span class="at">crs=</span><span class="dv">4326</span>, <span class="at">remove =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>region <span class="ot">&lt;-</span> <span class="fu">st_bbox</span>(sf_storm_data)</span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>Milton_Map <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> world)<span class="sc">+</span></span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>() <span class="sc">+</span> </span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_bin2d</span>(<span class="at">data=</span>Milton_storm_data, <span class="fu">aes</span>(<span class="at">y=</span><span class="fu">st_coordinates</span>(Milton_storm_data)[,<span class="dv">2</span>], </span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">x=</span><span class="fu">st_coordinates</span>(Milton_storm_data)[,<span class="dv">1</span>]),<span class="at">bins=</span><span class="dv">100</span>)<span class="sc">+</span></span>
+<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_distiller</span>(<span class="at">palette=</span><span class="st">"YlOrRd"</span>, </span>
+<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">trans=</span><span class="st">"log"</span>, <span class="at">direction=</span><span class="sc">-</span><span class="dv">1</span>, <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">10</span>,<span class="dv">100</span>,<span class="dv">1000</span>))<span class="sc">+</span></span>
+<span id="cb27-19"><a href="#cb27-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_sf</span>(<span class="at">ylim=</span>region[<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">4</span>)], <span class="at">xlim=</span>region[<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>)])</span>
+<span id="cb27-20"><a href="#cb27-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-21"><a href="#cb27-21" aria-hidden="true" tabindex="-1"></a>Milton_Map</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-2-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
 </div>
 <section id="download-and-clean-all-required-data" class="level2">
 <h2 class="anchored" data-anchor-id="download-and-clean-all-required-data">Download and clean all required data</h2>
-<p>#SCRIPT</p>
-<p>library(drat) addRepo(“geanders”) install.packages(“hurricaneexposure”) install.packages(“hurricaneexposuredata”)</p>
-<p>library(sf) library(tidyverse) library(ggmap) library(spData) library(lubridate) library(hurricaneexposure) library(hurricaneexposuredata) data(world) data(us_states)</p>
-</section>
-</section>
-<section id="download-a-csv-from-noaa-with-storm-track-information" class="level1">
-<h1>Download a csv from noaa with storm track information</h1>
-<p>dataurl=“https://www.ncei.noaa.gov/data/international-best-track-archive-for-climate-stewardship-ibtracs/v04r01/access/csv/ibtracs.NA.list.v04r01.csv”</p>
-<p>storm_data &lt;- read_csv(dataurl)</p>
-<p>storm_data_new &lt;- storm_data%&gt;% mutate(year = year(ISO_TIME))%&gt;% filter(year &gt;= 2000) %&gt;% mutate_if(is.numeric, function(x) ifelse(x==-999.0,NA,x)) %&gt;% mutate(decade=(floor(year/10)*10))</p>
-<p>sf_storm_data &lt;- storm_data_new %&gt;% st_as_sf(coords=c(“LON”,“LAT”),crs=4326, remove = FALSE)</p>
-<p>region &lt;- st_bbox(sf_storm_data)</p>
-<p>ggplot(data = world)+ geom_sf()+ stat_bin2d(data=storm_data_new, aes(y=st_coordinates(sf_storm_data)[,2], x=st_coordinates(sf_storm_data)[,1]),bins=100)+ facet_wrap(~decade)+ scale_fill_distiller(palette=“YlOrRd”, trans=“log”, direction=-1, breaks = c(1,10,100,1000))+ coord_sf(ylim=region[c(2,4)], xlim=region[c(1,3)])</p>
-<p>#26055, 26109 Milton_storm &lt;- storm_data_new %&gt;% mutate(year = year(ISO_TIME))%&gt;% filter(year == 2024)%&gt;% filter(NUMBER == 71)</p>
-<p>Milton_storm_data &lt;- Milton_storm %&gt;% st_as_sf(coords=c(“LON”,“LAT”),crs=4326, remove = FALSE)</p>
-<p>region &lt;- st_bbox(Milton_storm_data)</p>
-<p>ggplot(data = world)+ geom_sf() + stat_bin2d(data=Milton_storm_data, aes(y=st_coordinates(Milton_storm_data)[,2], x=st_coordinates(Milton_storm_data)[,1]),bins=100)+ scale_fill_distiller(palette=“YlOrRd”, trans=“log”, direction=-1, breaks = c(1,10,100,1000))+ coord_sf(ylim=region[c(2,4)], xlim=region[c(1,3)])</p>
-<p>#install both “hurricaneexposure” &amp;“hurricaneexposuredata” packages for the functions to run data(“hurr_tracks”) head(hurr_tracks) data(“storm_events”) head(storm_events)</p>
-<p>#provides tracks for the hurricanes that occurred</p>
-<p>library(dplyr) library(tidyr) storms_all &lt;- hurr_tracks %&gt;% select(storm_id) %&gt;% distinct() %&gt;% mutate(year = stringr::str_extract(storm_id, “-[0-9].+”)) %&gt;% filter(year &lt;= 2018) map_tracks((storms = storms_all$storm_id), alpha = 0.5, plot_points = TRUE, color = “blue”)</p>
-<p>Gulf_Ariene_1993 &lt;-map_tracks(storms = “Ariene-1993”)</p>
-<p>Gulf_Dean_1995 &lt;-map_tracks(storms = “Dean-1995”)</p>
-<p>Gulf_Bret_1999 &lt;-map_tracks(storms = “Bret-1999”)</p>
-<p>Gulf_Allison_2001 &lt;-map_tracks(storms = “Allison-2001”)</p>
-<p>Gulf_Don_2011 &lt;-map_tracks(storms = “Don-2011”)</p>
-<p>Gulf_Ingrid_2013 &lt;-map_tracks(storms = “Ingrid-2013”)</p>
-<p>Gulf_Bill_2015 &lt;-map_tracks(storms = “Bill-2015”)</p>
-<p>Gulf_Helene_2000 &lt;-map_tracks(storms = “Helene-2000”)</p>
-<p>Gulf_1989 &lt;- map_tracks(storms = c(“Allison-1989”, “Chantal-1989”, “Jerry-1989”), alpha = 0.5, plot_points = TRUE, color = “blue”)</p>
-<p>Gulf_1998 &lt;- map_tracks(storms = c(“Charley-1998”, “Frances-1998”), alpha = 0.5, plot_points = TRUE, color = “blue”)</p>
-<p>Gulf_2002 &lt;- map_tracks(storms = c(“Bertha-2002”, “Fay-2002”), alpha = 0.5, plot_points = TRUE, color = “blue”)</p>
-<p>Gulf_2003 &lt;- map_tracks(storms = c(“Claudette-2003”, “Erika-2003”,“Grace-2003”), alpha = 0.5, plot_points = TRUE, color = “blue”)</p>
-<p>Gulf_2005 &lt;- map_tracks(storms = c(“Emily-2005”, “Rita-2005”), alpha = 0.5, plot_points = TRUE, color = “blue”)</p>
-<p>Gulf_2007 &lt;- map_tracks(storms = c(“Erin-2007”, “Humberto-2007”), alpha = 0.5, plot_points = TRUE, color = “blue”)</p>
-<p>Gulf_2008 &lt;- map_tracks(storms = c(“Dolly-2008”, “Eduoard-2008”,“Ike-2008”), alpha = 0.5, plot_points = TRUE, color = “blue”)</p>
-<p>Gulf_2010 &lt;- map_tracks(storms = c(“Alex-2010”, “Hermine-2010”), alpha = 0.5, plot_points = TRUE, color = “blue”)</p>
-<p>Gulf_2017 &lt;- map_tracks(storms = c(“Cindy-2017”, “Harvey-2017”), alpha = 0.5, plot_points = TRUE, color = “blue”)</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">=</span><span class="dv">20</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>data<span class="ot">=</span><span class="fu">data.frame</span>(<span class="at">x=</span><span class="fu">runif</span>(n,<span class="sc">-</span><span class="dv">180</span>,<span class="dv">180</span>),</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">y=</span><span class="fu">runif</span>(n,<span class="sc">-</span><span class="dv">60</span>,<span class="dv">60</span>),</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">size =</span> <span class="fu">runif</span>(n, <span class="dv">5</span>, <span class="dv">20</span>),</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">category =</span> <span class="fu">factor</span>(</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">sample</span>(letters[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>], n, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>                  ),</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>                <span class="at">value =</span> <span class="fu">rnorm</span>(n))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install both "hurricaneexposure" &amp;"hurricaneexposuredata" packages for the functions to run</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"hurr_tracks"</span>)</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(hurr_tracks)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 6
+  storm_id     usa_atcf_id date         latitude longitude  wind
+  &lt;chr&gt;        &lt;chr&gt;       &lt;chr&gt;           &lt;dbl&gt;     &lt;dbl&gt; &lt;dbl&gt;
+1 Alberto-1988 AL011988    198808051800     32       -77.5    20
+2 Alberto-1988 AL011988    198808060000     32.8     -76.2    20
+3 Alberto-1988 AL011988    198808060600     34       -75.2    20
+4 Alberto-1988 AL011988    198808061200     35.2     -74.6    25
+5 Alberto-1988 AL011988    198808061800     37       -73.5    25
+6 Alberto-1988 AL011988    198808070000     38.7     -72.4    25</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> </span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) <span class="sc">%&gt;%</span> <span class="co">#show only 1:n rows</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">digits=</span><span class="dv">2</span>,<span class="at">align=</span><span class="st">"c"</span>)<span class="sc">%&gt;%</span> <span class="co">#make table and round to two digits</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> </span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">c</span>(<span class="st">"striped"</span>, <span class="st">"hover"</span>, <span class="st">"condensed"</span>, <span class="st">"responsive"</span>)) <span class="co">#apply other formatting</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="table-responsive">
-<table class="table table-striped table-hover table-condensed caption-top" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
-<th style="text-align: center;" data-quarto-table-cell-role="th">x</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">y</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">size</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">category</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">-175.61</td>
-<td style="text-align: center;">14.61</td>
-<td style="text-align: center;">14.83</td>
-<td style="text-align: center;">d</td>
-<td style="text-align: center;">-0.28</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">-102.00</td>
-<td style="text-align: center;">12.29</td>
-<td style="text-align: center;">19.36</td>
-<td style="text-align: center;">b</td>
-<td style="text-align: center;">1.31</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">16.76</td>
-<td style="text-align: center;">-45.66</td>
-<td style="text-align: center;">17.48</td>
-<td style="text-align: center;">a</td>
-<td style="text-align: center;">-1.09</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">155.23</td>
-<td style="text-align: center;">36.73</td>
-<td style="text-align: center;">10.64</td>
-<td style="text-align: center;">d</td>
-<td style="text-align: center;">-0.95</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">-177.36</td>
-<td style="text-align: center;">42.90</td>
-<td style="text-align: center;">13.98</td>
-<td style="text-align: center;">c</td>
-<td style="text-align: center;">-1.00</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">133.33</td>
-<td style="text-align: center;">13.82</td>
-<td style="text-align: center;">6.07</td>
-<td style="text-align: center;">c</td>
-<td style="text-align: center;">-0.44</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">-122.68</td>
-<td style="text-align: center;">-40.51</td>
-<td style="text-align: center;">16.80</td>
-<td style="text-align: center;">e</td>
-<td style="text-align: center;">0.89</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">173.05</td>
-<td style="text-align: center;">43.79</td>
-<td style="text-align: center;">11.88</td>
-<td style="text-align: center;">a</td>
-<td style="text-align: center;">1.66</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">131.85</td>
-<td style="text-align: center;">17.72</td>
-<td style="text-align: center;">12.12</td>
-<td style="text-align: center;">d</td>
-<td style="text-align: center;">-0.31</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">-142.90</td>
-<td style="text-align: center;">6.33</td>
-<td style="text-align: center;">12.76</td>
-<td style="text-align: center;">d</td>
-<td style="text-align: center;">-0.54</td>
-</tr>
-</tbody>
-</table>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"storm_events"</span>)</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(storm_events)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$`Alberto-1988`
+# A tibble: 19 × 2
+   fips  events   
+   &lt;chr&gt; &lt;list&gt;   
+ 1 13283 &lt;chr [1]&gt;
+ 2 36001 &lt;chr [1]&gt;
+ 3 36031 &lt;chr [1]&gt;
+ 4 36035 &lt;chr [2]&gt;
+ 5 36043 &lt;chr [1]&gt;
+ 6 36083 &lt;chr [1]&gt;
+ 7 36091 &lt;chr [3]&gt;
+ 8 36093 &lt;chr [2]&gt;
+ 9 36113 &lt;chr [2]&gt;
+10 36115 &lt;chr [2]&gt;
+11 37179 &lt;chr [1]&gt;
+12 42001 &lt;chr [3]&gt;
+13 42041 &lt;chr [2]&gt;
+14 42043 &lt;chr [1]&gt;
+15 42055 &lt;chr [2]&gt;
+16 42133 &lt;chr [2]&gt;
+17 45039 &lt;chr [2]&gt;
+18 50001 &lt;chr [1]&gt;
+19 51043 &lt;chr [1]&gt;
+
+$`Beryl-1988`
+# A tibble: 4 × 2
+  fips  events   
+  &lt;chr&gt; &lt;list&gt;   
+1 48147 &lt;chr [1]&gt;
+2 48217 &lt;chr [1]&gt;
+3 48309 &lt;chr [1]&gt;
+4 48453 &lt;chr [2]&gt;
+
+$`Chris-1988`
+# A tibble: 48 × 2
+   fips  events   
+   &lt;chr&gt; &lt;list&gt;   
+ 1 12057 &lt;chr [1]&gt;
+ 2 12101 &lt;chr [1]&gt;
+ 3 12115 &lt;chr [1]&gt;
+ 4 33009 &lt;chr [2]&gt;
+ 5 33019 &lt;chr [1]&gt;
+ 6 34001 &lt;chr [2]&gt;
+ 7 34005 &lt;chr [1]&gt;
+ 8 34011 &lt;chr [1]&gt;
+ 9 34029 &lt;chr [1]&gt;
+10 36007 &lt;chr [2]&gt;
+# ℹ 38 more rows
+
+$`Florence-1988`
+# A tibble: 3 × 2
+  fips  events   
+  &lt;chr&gt; &lt;list&gt;   
+1 12005 &lt;chr [1]&gt;
+2 12131 &lt;chr [3]&gt;
+3 48485 &lt;chr [1]&gt;
+
+$`Gilbert-1988`
+# A tibble: 73 × 2
+   fips  events   
+   &lt;chr&gt; &lt;list&gt;   
+ 1 17015 &lt;chr [1]&gt;
+ 2 17063 &lt;chr [1]&gt;
+ 3 17089 &lt;chr [1]&gt;
+ 4 17097 &lt;chr [1]&gt;
+ 5 17111 &lt;chr [1]&gt;
+ 6 17197 &lt;chr [1]&gt;
+ 7 17201 &lt;chr [1]&gt;
+ 8 18003 &lt;chr [1]&gt;
+ 9 18005 &lt;chr [1]&gt;
+10 18007 &lt;chr [1]&gt;
+# ℹ 63 more rows
+
+$`Keith-1988`
+# A tibble: 1 × 2
+  fips  events   
+  &lt;chr&gt; &lt;list&gt;   
+1 12103 &lt;chr [2]&gt;</code></pre>
 </div>
-
-
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co">#provides tracks for the hurricanes that occurred</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>storms_all <span class="ot">&lt;-</span> hurr_tracks <span class="sc">%&gt;%</span></span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(storm_id) <span class="sc">%&gt;%</span></span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">year =</span> stringr<span class="sc">::</span><span class="fu">str_extract</span>(storm_id, <span class="st">"-[0-9].+"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">&lt;=</span> <span class="dv">2018</span>)</span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a><span class="fu">map_tracks</span>((<span class="at">storms =</span> storms_all<span class="sc">$</span>storm_id),</span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a><span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">plot_points =</span> <span class="cn">TRUE</span>, <span class="at">color =</span> <span class="st">"blue"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>Gulf_Ariene_1993 <span class="ot">&lt;-</span><span class="fu">map_tracks</span>(<span class="at">storms =</span> <span class="st">"Ariene-1993"</span>)</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>Gulf_Dean_1995 <span class="ot">&lt;-</span><span class="fu">map_tracks</span>(<span class="at">storms =</span> <span class="st">"Dean-1995"</span>)</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>Gulf_Bret_1999 <span class="ot">&lt;-</span><span class="fu">map_tracks</span>(<span class="at">storms =</span> <span class="st">"Bret-1999"</span>)</span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>Gulf_Allison_2001 <span class="ot">&lt;-</span><span class="fu">map_tracks</span>(<span class="at">storms =</span> <span class="st">"Allison-2001"</span>)</span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>Gulf_Don_2011 <span class="ot">&lt;-</span><span class="fu">map_tracks</span>(<span class="at">storms =</span> <span class="st">"Don-2011"</span>)</span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a>Gulf_Ingrid_2013 <span class="ot">&lt;-</span><span class="fu">map_tracks</span>(<span class="at">storms =</span> <span class="st">"Ingrid-2013"</span>)</span>
+<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a>Gulf_Bill_2015 <span class="ot">&lt;-</span><span class="fu">map_tracks</span>(<span class="at">storms =</span> <span class="st">"Bill-2015"</span>)</span>
+<span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-15"><a href="#cb33-15" aria-hidden="true" tabindex="-1"></a>Gulf_Helene_2000 <span class="ot">&lt;-</span><span class="fu">map_tracks</span>(<span class="at">storms =</span> <span class="st">"Helene-2000"</span>)</span>
+<span id="cb33-16"><a href="#cb33-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-17"><a href="#cb33-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-18"><a href="#cb33-18" aria-hidden="true" tabindex="-1"></a>Gulf_1989 <span class="ot">&lt;-</span> <span class="fu">map_tracks</span>(<span class="at">storms =</span> <span class="fu">c</span>(<span class="st">"Allison-1989"</span>, <span class="st">"Chantal-1989"</span>, <span class="st">"Jerry-1989"</span>),</span>
+<span id="cb33-19"><a href="#cb33-19" aria-hidden="true" tabindex="-1"></a>           <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">plot_points =</span> <span class="cn">TRUE</span>, <span class="at">color =</span> <span class="st">"blue"</span>)</span>
+<span id="cb33-20"><a href="#cb33-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-21"><a href="#cb33-21" aria-hidden="true" tabindex="-1"></a>Gulf_1998 <span class="ot">&lt;-</span> <span class="fu">map_tracks</span>(<span class="at">storms =</span> <span class="fu">c</span>(<span class="st">"Charley-1998"</span>, <span class="st">"Frances-1998"</span>),</span>
+<span id="cb33-22"><a href="#cb33-22" aria-hidden="true" tabindex="-1"></a>         <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">plot_points =</span> <span class="cn">TRUE</span>, <span class="at">color =</span> <span class="st">"blue"</span>)</span>
+<span id="cb33-23"><a href="#cb33-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-24"><a href="#cb33-24" aria-hidden="true" tabindex="-1"></a>Gulf_2002 <span class="ot">&lt;-</span> <span class="fu">map_tracks</span>(<span class="at">storms =</span> <span class="fu">c</span>(<span class="st">"Bertha-2002"</span>, <span class="st">"Fay-2002"</span>),</span>
+<span id="cb33-25"><a href="#cb33-25" aria-hidden="true" tabindex="-1"></a>           <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">plot_points =</span> <span class="cn">TRUE</span>, <span class="at">color =</span> <span class="st">"blue"</span>)</span>
+<span id="cb33-26"><a href="#cb33-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-27"><a href="#cb33-27" aria-hidden="true" tabindex="-1"></a>Gulf_2003 <span class="ot">&lt;-</span> <span class="fu">map_tracks</span>(<span class="at">storms =</span> <span class="fu">c</span>(<span class="st">"Claudette-2003"</span>, <span class="st">"Erika-2003"</span>,<span class="st">"Grace-2003"</span>),</span>
+<span id="cb33-28"><a href="#cb33-28" aria-hidden="true" tabindex="-1"></a>           <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">plot_points =</span> <span class="cn">TRUE</span>, <span class="at">color =</span> <span class="st">"blue"</span>)</span>
+<span id="cb33-29"><a href="#cb33-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-30"><a href="#cb33-30" aria-hidden="true" tabindex="-1"></a>Gulf_2005 <span class="ot">&lt;-</span> <span class="fu">map_tracks</span>(<span class="at">storms =</span> <span class="fu">c</span>(<span class="st">"Emily-2005"</span>, <span class="st">"Rita-2005"</span>),</span>
+<span id="cb33-31"><a href="#cb33-31" aria-hidden="true" tabindex="-1"></a>           <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">plot_points =</span> <span class="cn">TRUE</span>, <span class="at">color =</span> <span class="st">"blue"</span>)</span>
+<span id="cb33-32"><a href="#cb33-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-33"><a href="#cb33-33" aria-hidden="true" tabindex="-1"></a>Gulf_2007 <span class="ot">&lt;-</span> <span class="fu">map_tracks</span>(<span class="at">storms =</span> <span class="fu">c</span>(<span class="st">"Erin-2007"</span>, <span class="st">"Humberto-2007"</span>),</span>
+<span id="cb33-34"><a href="#cb33-34" aria-hidden="true" tabindex="-1"></a>           <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">plot_points =</span> <span class="cn">TRUE</span>, <span class="at">color =</span> <span class="st">"blue"</span>)</span>
+<span id="cb33-35"><a href="#cb33-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-36"><a href="#cb33-36" aria-hidden="true" tabindex="-1"></a>Gulf_2008 <span class="ot">&lt;-</span> <span class="fu">map_tracks</span>(<span class="at">storms =</span> <span class="fu">c</span>(<span class="st">"Dolly-2008"</span>, <span class="st">"Eduoard-2008"</span>,<span class="st">"Ike-2008"</span>),</span>
+<span id="cb33-37"><a href="#cb33-37" aria-hidden="true" tabindex="-1"></a>           <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">plot_points =</span> <span class="cn">TRUE</span>, <span class="at">color =</span> <span class="st">"blue"</span>)</span>
+<span id="cb33-38"><a href="#cb33-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-39"><a href="#cb33-39" aria-hidden="true" tabindex="-1"></a>Gulf_2010 <span class="ot">&lt;-</span> <span class="fu">map_tracks</span>(<span class="at">storms =</span> <span class="fu">c</span>(<span class="st">"Alex-2010"</span>, <span class="st">"Hermine-2010"</span>),</span>
+<span id="cb33-40"><a href="#cb33-40" aria-hidden="true" tabindex="-1"></a>           <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">plot_points =</span> <span class="cn">TRUE</span>, <span class="at">color =</span> <span class="st">"blue"</span>)</span>
+<span id="cb33-41"><a href="#cb33-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-42"><a href="#cb33-42" aria-hidden="true" tabindex="-1"></a>Gulf_2017 <span class="ot">&lt;-</span> <span class="fu">map_tracks</span>(<span class="at">storms =</span> <span class="fu">c</span>(<span class="st">"Cindy-2017"</span>, <span class="st">"Harvey-2017"</span>),</span>
+<span id="cb33-43"><a href="#cb33-43" aria-hidden="true" tabindex="-1"></a>           <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">plot_points =</span> <span class="cn">TRUE</span>, <span class="at">color =</span> <span class="st">"blue"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> world)<span class="sc">+</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>()<span class="sc">+</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_bin2d</span>(<span class="at">data=</span>storm_data_new, <span class="fu">aes</span>(<span class="at">y=</span><span class="fu">st_coordinates</span>(sf_storm_data)[,<span class="dv">2</span>], <span class="at">x=</span><span class="fu">st_coordinates</span>(sf_storm_data)[,<span class="dv">1</span>]),<span class="at">bins=</span><span class="dv">100</span>)<span class="sc">+</span></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> Milton_storm_data)<span class="sc">+</span></span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_distiller</span>(<span class="at">palette=</span><span class="st">"YlOrRd"</span>, <span class="at">trans=</span><span class="st">"log"</span>, <span class="at">direction=</span><span class="sc">-</span><span class="dv">1</span>, <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">10</span>,<span class="dv">100</span>,<span class="dv">1000</span>))<span class="sc">+</span></span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_sf</span>(<span class="at">ylim=</span>region[<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">4</span>)], <span class="at">xlim=</span>region[<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>)])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>Milton_storm_wind <span class="ot">&lt;-</span> storm_data_new <span class="sc">%&gt;%</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">year =</span> <span class="fu">year</span>(ISO_TIME))<span class="sc">%&gt;%</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2024</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(NUMBER <span class="sc">==</span> <span class="dv">71</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(USA_WIND <span class="sc">==</span> <span class="dv">71</span>)</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>Milton_storm_wind_data <span class="ot">&lt;-</span> Milton_storm_wind <span class="sc">%&gt;%</span></span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_as_sf</span>(<span class="at">coords=</span><span class="fu">c</span>(<span class="st">"LON"</span>,<span class="st">"LAT"</span>),<span class="at">crs=</span><span class="dv">4326</span>, <span class="at">remove =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>Warning in min(cc[[1]], na.rm = TRUE): no non-missing arguments to min;
+returning Inf</code></pre>
+<pre><code>Warning in min(cc[[2]], na.rm = TRUE): no non-missing arguments to min;
+returning Inf</code></pre>
+<pre><code>Warning in max(cc[[1]], na.rm = TRUE): no non-missing arguments to max;
+returning -Inf</code></pre>
+<pre><code>Warning in max(cc[[2]], na.rm = TRUE): no non-missing arguments to max;
+returning -Inf</code></pre>
 <p>Add any additional processing steps here.</p>
+</section>
 </section>
 <section id="results" class="level1">
 <h1>Results</h1>
 <p>[~200 words]</p>
 <p>Tables and figures (maps and other graphics) are carefully planned to convey the results of your analysis. Intense exploration and evidence of many trials and failures. The author looked at the data in many different ways before coming to the final presentation of the data.</p>
 <p>Show tables, plots, etc. and describe them.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">leaflet</span>(data) <span class="sc">%&gt;%</span> </span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addTiles</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addCircleMarkers</span>(<span class="sc">~</span>x, <span class="sc">~</span>y, <span class="at">radius =</span> <span class="sc">~</span>size,<span class="at">color =</span> <span class="sc">~</span><span class="fu">as.factor</span>(category)) <span class="sc">%&gt;%</span> </span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addPopups</span>(<span class="sc">~</span>x[<span class="dv">2</span>], <span class="sc">~</span>y[<span class="dv">2</span>], <span class="st">"Random popup"</span>)</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>m  <span class="co"># a map with the default OSM tile layer</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div class="leaflet html-widget html-fill-item" id="htmlwidget-a86ff4ddb4f8c24c6c8d" style="width:100%;height:325px;"></div>
-<script type="application/json" data-for="htmlwidget-a86ff4ddb4f8c24c6c8d">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addCircleMarkers","args":[[14.60692268796265,12.28601574897766,-45.65851958468556,36.72723926603794,42.90274187922478,13.82247568108141,-40.51243370398879,43.78938381560147,17.72411744110286,6.333241509273648,21.24058797955513,-37.90906461887062,58.24386619962752,9.038551300764084,-0.6504520308226347,42.16502903960645,38.53911551646888,-43.45259182155132,-31.33863754570484,27.25138435140252],[-175.608246428892,-101.9995559658855,16.76168697886169,155.2285278774798,-177.3557247966528,133.3345678076148,-122.6797107607126,173.0504449736327,131.845509884879,-142.9012959077954,-138.4029292222112,42.75326228700578,-29.72202840261161,-170.2222591638565,-145.4847795143723,-22.04227675683796,21.07706758193672,158.7576863821596,44.83617662452161,-165.1971000060439],[14.82849242514931,19.35779883526266,17.48030600138009,10.64043469494209,13.98139141849242,6.065272111445665,16.80035539553501,11.88453233218752,12.12457463727333,12.75767647777684,16.27745295758359,15.33488010056317,5.688492585904896,19.40714975236915,19.12987457937561,6.853986739879474,16.46218433743343,10.44796227477491,9.677149383351207,13.72695901314728],null,null,{"interactive":true,"className":"","stroke":true,"color":["d","b","a","d","c","c","e","a","d","d","b","d","e","a","d","a","d","a","b","b"],"weight":5,"opacity":0.5,"fill":true,"fillColor":["d","b","a","d","c","c","e","a","d","d","b","d","e","a","d","a","d","a","b","b"],"fillOpacity":0.2},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addPopups","args":[12.28601574897766,-101.9995559658855,"Random popup",null,null,{"maxWidth":300,"minWidth":50,"autoPan":true,"keepInView":false,"closeButton":true,"className":""}]}],"limits":{"lat":[-45.65851958468556,58.24386619962752],"lng":[-177.3557247966528,173.0504449736327]}},"evals":[],"jsHooks":[]}</script>
-<p>Map of completely random data</p>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> </span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>x,<span class="at">y=</span>y,<span class="at">col=</span>category))<span class="sc">+</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
 <section id="dygraphs-example" class="level3">
 <h3 class="anchored" data-anchor-id="dygraphs-example">Dygraphs Example</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dygraphs)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dygraph</span>(nhtemp, <span class="at">main =</span> <span class="st">"New Haven Temperatures"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dyRangeSelector</span>(<span class="at">dateWindow =</span> <span class="fu">c</span>(<span class="st">"1920-01-01"</span>, <span class="st">"1960-01-01"</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div class="dygraphs html-widget html-fill-item" id="htmlwidget-3021a4173deb64e3fa46" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-3021a4173deb64e3fa46">{"x":{"attrs":{"title":"New Haven Temperatures","labels":["year","V1"],"legend":"auto","retainDateWindow":false,"axes":{"x":{"pixelsPerLabel":60}},"showRangeSelector":true,"dateWindow":["1920-01-01T00:00:00.000Z","1960-01-01T00:00:00.000Z"],"rangeSelectorHeight":40,"rangeSelectorPlotFillColor":" #A7B1C4","rangeSelectorPlotStrokeColor":"#808FAB","interactionModel":"Dygraph.Interaction.defaultModel"},"scale":"yearly","annotations":[],"shadings":[],"events":[],"format":"date","data":[["1912-01-01T00:00:00.000Z","1913-01-01T00:00:00.000Z","1914-01-01T00:00:00.000Z","1915-01-01T00:00:00.000Z","1916-01-01T00:00:00.000Z","1917-01-01T00:00:00.000Z","1918-01-01T00:00:00.000Z","1919-01-01T00:00:00.000Z","1920-01-01T00:00:00.000Z","1921-01-01T00:00:00.000Z","1922-01-01T00:00:00.000Z","1923-01-01T00:00:00.000Z","1924-01-01T00:00:00.000Z","1925-01-01T00:00:00.000Z","1926-01-01T00:00:00.000Z","1927-01-01T00:00:00.000Z","1928-01-01T00:00:00.000Z","1929-01-01T00:00:00.000Z","1930-01-01T00:00:00.000Z","1931-01-01T00:00:00.000Z","1932-01-01T00:00:00.000Z","1933-01-01T00:00:00.000Z","1934-01-01T00:00:00.000Z","1935-01-01T00:00:00.000Z","1936-01-01T00:00:00.000Z","1937-01-01T00:00:00.000Z","1938-01-01T00:00:00.000Z","1939-01-01T00:00:00.000Z","1940-01-01T00:00:00.000Z","1941-01-01T00:00:00.000Z","1942-01-01T00:00:00.000Z","1943-01-01T00:00:00.000Z","1944-01-01T00:00:00.000Z","1945-01-01T00:00:00.000Z","1946-01-01T00:00:00.000Z","1947-01-01T00:00:00.000Z","1948-01-01T00:00:00.000Z","1949-01-01T00:00:00.000Z","1950-01-01T00:00:00.000Z","1951-01-01T00:00:00.000Z","1952-01-01T00:00:00.000Z","1953-01-01T00:00:00.000Z","1954-01-01T00:00:00.000Z","1955-01-01T00:00:00.000Z","1956-01-01T00:00:00.000Z","1957-01-01T00:00:00.000Z","1958-01-01T00:00:00.000Z","1959-01-01T00:00:00.000Z","1960-01-01T00:00:00.000Z","1961-01-01T00:00:00.000Z","1962-01-01T00:00:00.000Z","1963-01-01T00:00:00.000Z","1964-01-01T00:00:00.000Z","1965-01-01T00:00:00.000Z","1966-01-01T00:00:00.000Z","1967-01-01T00:00:00.000Z","1968-01-01T00:00:00.000Z","1969-01-01T00:00:00.000Z","1970-01-01T00:00:00.000Z","1971-01-01T00:00:00.000Z"],[49.9,52.3,49.4,51.1,49.4,47.9,49.8,50.9,49.3,51.9,50.8,49.6,49.3,50.6,48.4,50.7,50.9,50.6,51.5,52.8,51.8,51.1,49.8,50.2,50.4,51.6,51.8,50.9,48.8,51.7,51,50.6,51.7,51.5,52.1,51.3,51,54,51.4,52.7,53.1,54.6,52,52,50.9,52.6,50.2,52.6,51.6,51.9,50.5,50.9,51.7,51.4,51.7,50.8,51.9,51.8,51.9,53]]},"evals":["attrs.interactionModel"],"jsHooks":[]}</script>
-</div>
-</div>
 </section>
 </section>
 <section id="conclusions" class="level1">
