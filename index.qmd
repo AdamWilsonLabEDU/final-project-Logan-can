@@ -226,6 +226,22 @@ ggplot(data = world)+
   coord_sf(ylim=region[c(2,4)], xlim=region[c(1,3)])
 
 ```
+```{r}
+ggplot(Milton_storm_data, aes(x=as.numeric(USA_WIND)))+geom_histogram()
+
+```
+
+```{r}
+ggplot(storm_data_new, aes(x=as.numeric(USA_WIND)))+geom_histogram()
+```
+
+```{r}
+ggplot(Milton_storm_data, aes(x=as.numeric(USA_PRES)))+geom_histogram()
+```
+
+```{r}
+ggplot(storm_data_new, aes(x=as.numeric(USA_PRES)))+geom_histogram()
+```
 
 
 ### Dygraphs Example
