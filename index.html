@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Logan Hales">
-<meta name="dcterms.date" content="2024-11-15">
+<meta name="dcterms.date" content="2024-11-21">
 
 <title>Hurricane Milton Abnormality – GEO511_FinalProject</title>
 <style>
@@ -166,7 +166,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 15, 2024</p>
+      <p class="date">November 21, 2024</p>
     </div>
   </div>
   
@@ -209,30 +209,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># Downloading packages -------------------------------------------------------
-- Downloading drat from CRAN ...                OK [197.3 Kb in 0.43s]
-Successfully downloaded 1 package in 1.6 seconds.
+- Downloading drat from CRAN ...                OK [197.3 Kb in 0.35s]
+Successfully downloaded 1 package in 1.1 seconds.
 
 The following package(s) will be installed:
 - drat [0.2.5]
 These packages will be installed into "~/work/final-project-Logan-can/final-project-Logan-can/renv/library/linux-ubuntu-jammy/R-4.4/x86_64-pc-linux-gnu".
 
 # Installing packages --------------------------------------------------------
-- Installing drat ...                           OK [installed binary and cached in 0.22s]
-Successfully installed 1 package in 0.31 seconds.</code></pre>
+- Installing drat ...                           OK [installed binary and cached in 0.23s]
+Successfully installed 1 package in 0.3 seconds.</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(drat)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">addRepo</span>(<span class="st">"geanders"</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"hurricaneexposure"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># Downloading packages -------------------------------------------------------
-- Downloading hurricaneexposure from CRAN ...   OK [1.9 Mb in 0.65s]
-- Downloading ggmap from CRAN ...               OK [4.5 Mb in 0.52s]
-- Downloading plyr from CRAN ...                OK [768 Kb in 0.47s]
-- Downloading jpeg from CRAN ...                OK [28.6 Kb in 0.37s]
-- Downloading bitops from CRAN ...              OK [25.4 Kb in 0.4s]
-- Downloading mapproj from CRAN ...             OK [50.4 Kb in 0.43s]
-- Downloading maps from CRAN ...                OK [2.9 Mb in 0.46s]
-Successfully downloaded 7 packages in 5.6 seconds.
+- Downloading hurricaneexposure from CRAN ...   OK [1.9 Mb in 0.45s]
+- Downloading ggmap from CRAN ...               OK [4.5 Mb in 0.31s]
+- Downloading plyr from CRAN ...                OK [768 Kb in 0.28s]
+- Downloading jpeg from CRAN ...                OK [28.6 Kb in 0.2s]
+- Downloading bitops from CRAN ...              OK [25.4 Kb in 0.23s]
+- Downloading mapproj from CRAN ...             OK [50.4 Kb in 0.26s]
+- Downloading maps from CRAN ...                OK [2.9 Mb in 0.28s]
+Successfully downloaded 7 packages in 3.9 seconds.
 
 The following package(s) will be installed:
 - bitops            [1.0-9]
@@ -245,20 +245,20 @@ The following package(s) will be installed:
 These packages will be installed into "~/work/final-project-Logan-can/final-project-Logan-can/renv/library/linux-ubuntu-jammy/R-4.4/x86_64-pc-linux-gnu".
 
 # Installing packages --------------------------------------------------------
-- Installing plyr ...                           OK [installed binary and cached in 0.29s]
-- Installing jpeg ...                           OK [installed binary and cached in 0.21s]
+- Installing plyr ...                           OK [installed binary and cached in 0.28s]
+- Installing jpeg ...                           OK [installed binary and cached in 0.2s]
 - Installing bitops ...                         OK [installed binary and cached in 0.2s]
-- Installing ggmap ...                          OK [installed binary and cached in 0.82s]
+- Installing ggmap ...                          OK [installed binary and cached in 0.81s]
 - Installing maps ...                           OK [installed binary and cached in 0.27s]
 - Installing mapproj ...                        OK [installed binary and cached in 0.21s]
-- Installing hurricaneexposure ...              OK [installed binary and cached in 0.58s]
+- Installing hurricaneexposure ...              OK [installed binary and cached in 0.57s]
 Successfully installed 7 packages in 2.8 seconds.</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"hurricaneexposuredata"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># Downloading packages -------------------------------------------------------
-- Downloading hurricaneexposuredata from geanders ... OK [14.4 Mb in 0.52s]
-Successfully downloaded 1 package in 0.84 seconds.
+- Downloading hurricaneexposuredata from geanders ... OK [14.4 Mb in 0.55s]
+Successfully downloaded 1 package in 0.87 seconds.
 
 The following package(s) will be installed:
 - hurricaneexposuredata [0.1.0]
@@ -273,14 +273,14 @@ Successfully installed 1 package in 13 seconds.</code></pre>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># Downloading packages -------------------------------------------------------
-- Downloading sf from CRAN ...                  OK [3.6 Mb in 0.38s]
-- Downloading classInt from CRAN ...            OK [487.3 Kb in 0.38s]
-- Downloading e1071 from CRAN ...               OK [582.2 Kb in 0.39s]
-- Downloading proxy from CRAN ...               OK [171.5 Kb in 0.38s]
-- Downloading s2 from CRAN ...                  OK [2.1 Mb in 0.39s]
-- Downloading wk from CRAN ...                  OK [1.7 Mb in 0.39s]
-- Downloading units from CRAN ...               OK [354.5 Kb in 0.4s]
-Successfully downloaded 7 packages in 3.7 seconds.
+- Downloading sf from CRAN ...                  OK [3.6 Mb in 0.23s]
+- Downloading classInt from CRAN ...            OK [487.3 Kb in 0.26s]
+- Downloading e1071 from CRAN ...               OK [582.2 Kb in 0.26s]
+- Downloading proxy from CRAN ...               OK [171.5 Kb in 0.3s]
+- Downloading s2 from CRAN ...                  OK [2.1 Mb in 0.25s]
+- Downloading wk from CRAN ...                  OK [1.7 Mb in 0.21s]
+- Downloading units from CRAN ...               OK [354.5 Kb in 0.25s]
+Successfully downloaded 7 packages in 2.7 seconds.
 
 The following package(s) will be installed:
 - classInt [0.4-10]
@@ -293,14 +293,14 @@ The following package(s) will be installed:
 These packages will be installed into "~/work/final-project-Logan-can/final-project-Logan-can/renv/library/linux-ubuntu-jammy/R-4.4/x86_64-pc-linux-gnu".
 
 # Installing packages --------------------------------------------------------
-- Installing proxy ...                          OK [installed binary and cached in 0.2s]
-- Installing e1071 ...                          OK [installed binary and cached in 0.22s]
-- Installing classInt ...                       OK [installed binary and cached in 0.23s]
-- Installing wk ...                             OK [installed binary and cached in 0.24s]
-- Installing s2 ...                             OK [installed binary and cached in 0.34s]
+- Installing proxy ...                          OK [installed binary and cached in 0.21s]
+- Installing e1071 ...                          OK [installed binary and cached in 0.23s]
+- Installing classInt ...                       OK [installed binary and cached in 0.24s]
+- Installing wk ...                             OK [installed binary and cached in 0.26s]
+- Installing s2 ...                             OK [installed binary and cached in 0.35s]
 - Installing units ...                          OK [installed binary and cached in 0.31s]
-- Installing sf ...                             OK [installed binary and cached in 0.58s]
-Successfully installed 7 packages in 2.4 seconds.</code></pre>
+- Installing sf ...                             OK [installed binary and cached in 0.87s]
+Successfully installed 7 packages in 2.7 seconds.</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">"tidyverse"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)) {</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span>
@@ -313,8 +313,8 @@ Successfully installed 7 packages in 2.4 seconds.</code></pre>
 <span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># Downloading packages -------------------------------------------------------
-- Downloading spData from CRAN ...              OK [4.3 Mb in 0.43s]
-Successfully downloaded 1 package in 0.64 seconds.
+- Downloading spData from CRAN ...              OK [4.3 Mb in 0.27s]
+Successfully downloaded 1 package in 0.48 seconds.
 
 The following package(s) will be installed:
 - spData [2.3.3]
@@ -338,21 +338,21 @@ Successfully installed 1 package in 0.49 seconds.</code></pre>
 <span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># Downloading packages -------------------------------------------------------
-- Downloading tmap from CRAN ...                OK [3.6 Mb in 0.42s]
+- Downloading tmap from CRAN ...                OK [3.6 Mb in 0.29s]
 - Downloading tmaptools from CRAN ...           OK [168.5 Kb in 0.39s]
-- Downloading lwgeom from CRAN ...              OK [468.5 Kb in 0.42s]
-- Downloading stars from CRAN ...               OK [4.3 Mb in 1.2s]
-- Downloading abind from CRAN ...               OK [63.6 Kb in 0.35s]
-- Downloading dichromat from CRAN ...           OK [143 Kb in 0.69s]
-- Downloading XML from CRAN ...                 OK [1.7 Mb in 0.4s]
-- Downloading leafsync from CRAN ...            OK [823.7 Kb in 0.39s]
-- Downloading leafem from CRAN ...              OK [3.4 Mb in 0.45s]
-- Downloading geojsonsf from CRAN ...           OK [1.6 Mb in 0.4s]
-- Downloading geometries from CRAN ...          OK [283.2 Kb in 0.38s]
-- Downloading jsonify from CRAN ...             OK [628.8 Kb in 0.43s]
-- Downloading rapidjsonr from CRAN ...          OK [126.4 Kb in 0.39s]
-- Downloading sfheaders from CRAN ...           OK [471.7 Kb in 0.72s]
-Successfully downloaded 14 packages in 9 seconds.
+- Downloading lwgeom from CRAN ...              OK [468.5 Kb in 0.27s]
+- Downloading stars from CRAN ...               OK [4.3 Mb in 0.26s]
+- Downloading abind from CRAN ...               OK [63.6 Kb in 0.21s]
+- Downloading dichromat from CRAN ...           OK [143 Kb in 0.21s]
+- Downloading XML from CRAN ...                 OK [1.7 Mb in 0.2s]
+- Downloading leafsync from CRAN ...            OK [823.7 Kb in 0.36s]
+- Downloading leafem from CRAN ...              OK [3.4 Mb in 0.27s]
+- Downloading geojsonsf from CRAN ...           OK [1.6 Mb in 0.25s]
+- Downloading geometries from CRAN ...          OK [283.2 Kb in 0.24s]
+- Downloading jsonify from CRAN ...             OK [628.8 Kb in 0.34s]
+- Downloading rapidjsonr from CRAN ...          OK [126.4 Kb in 0.21s]
+- Downloading sfheaders from CRAN ...           OK [471.7 Kb in 0.21s]
+Successfully downloaded 14 packages in 5.7 seconds.
 
 The following package(s) will be installed:
 - abind      [1.4-8]
@@ -372,17 +372,17 @@ The following package(s) will be installed:
 These packages will be installed into "~/work/final-project-Logan-can/final-project-Logan-can/renv/library/linux-ubuntu-jammy/R-4.4/x86_64-pc-linux-gnu".
 
 # Installing packages --------------------------------------------------------
-- Installing lwgeom ...                         OK [installed binary and cached in 0.49s]
+- Installing lwgeom ...                         OK [installed binary and cached in 0.5s]
 - Installing abind ...                          OK [installed binary and cached in 0.21s]
 - Installing stars ...                          OK [installed binary and cached in 0.69s]
-- Installing dichromat ...                      OK [installed binary and cached in 0.2s]
-- Installing XML ...                            OK [installed binary and cached in 0.35s]
-- Installing tmaptools ...                      OK [installed binary and cached in 0.99s]
-- Installing leafsync ...                       OK [installed binary and cached in 0.21s]
+- Installing dichromat ...                      OK [installed binary and cached in 0.21s]
+- Installing XML ...                            OK [installed binary and cached in 0.36s]
+- Installing tmaptools ...                      OK [installed binary and cached in 1.0s]
+- Installing leafsync ...                       OK [installed binary and cached in 0.22s]
 - Installing geometries ...                     OK [installed binary and cached in 0.29s]
-- Installing rapidjsonr ...                     OK [installed binary and cached in 0.22s]
+- Installing rapidjsonr ...                     OK [installed binary and cached in 0.21s]
 - Installing jsonify ...                        OK [installed binary and cached in 0.3s]
-- Installing sfheaders ...                      OK [installed binary and cached in 0.29s]
+- Installing sfheaders ...                      OK [installed binary and cached in 0.3s]
 - Installing geojsonsf ...                      OK [installed binary and cached in 0.3s]
 - Installing leafem ...                         OK [installed binary and cached in 4.0s]
 - Installing tmap ...                           OK [installed binary and cached in 4.2s]
@@ -435,7 +435,7 @@ remotes::install_github('r-tmap/tmap')</code></pre>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>storm_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(dataurl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Rows: 127165 Columns: 174
+<pre><code>Rows: 127208 Columns: 174
 ── Column specification ────────────────────────────────────────────────────────
 Delimiter: ","
 chr  (149): SID, SEASON, BASIN, SUBBASIN, NAME, NATURE, LAT, LON, WMO_WIND, ...
@@ -502,8 +502,13 @@ dttm   (1): ISO_TIME
 </div>
 </div>
 </div>
-<section id="download-and-clean-all-required-data" class="level2">
-<h2 class="anchored" data-anchor-id="download-and-clean-all-required-data">Download and clean all required data</h2>
+<p>Add any additional processing steps here.</p>
+</section>
+<section id="results" class="level1">
+<h1>Results</h1>
+<p>[~200 words]</p>
+<p>Tables and figures (maps and other graphics) are carefully planned to convey the results of your analysis. Intense exploration and evidence of many trials and failures. The author looked at the data in many different ways before coming to the final presentation of the data.</p>
+<p>Show tables, plots, etc. and describe them.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install both "hurricaneexposure" &amp;"hurricaneexposuredata" packages for the functions to run</span></span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"hurr_tracks"</span>)</span>
@@ -663,38 +668,21 @@ $`Keith-1988`
 <span id="cb33-42"><a href="#cb33-42" aria-hidden="true" tabindex="-1"></a>Gulf_2017 <span class="ot">&lt;-</span> <span class="fu">map_tracks</span>(<span class="at">storms =</span> <span class="fu">c</span>(<span class="st">"Cindy-2017"</span>, <span class="st">"Harvey-2017"</span>),</span>
 <span id="cb33-43"><a href="#cb33-43" aria-hidden="true" tabindex="-1"></a>           <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">plot_points =</span> <span class="cn">TRUE</span>, <span class="at">color =</span> <span class="st">"blue"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div class="cell">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> world)<span class="sc">+</span></span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>()<span class="sc">+</span></span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_bin2d</span>(<span class="at">data=</span>storm_data_new, <span class="fu">aes</span>(<span class="at">y=</span><span class="fu">st_coordinates</span>(sf_storm_data)[,<span class="dv">2</span>], <span class="at">x=</span><span class="fu">st_coordinates</span>(sf_storm_data)[,<span class="dv">1</span>]),<span class="at">bins=</span><span class="dv">100</span>)<span class="sc">+</span></span>
 <span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> Milton_storm_data)<span class="sc">+</span></span>
 <span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_distiller</span>(<span class="at">palette=</span><span class="st">"YlOrRd"</span>, <span class="at">trans=</span><span class="st">"log"</span>, <span class="at">direction=</span><span class="sc">-</span><span class="dv">1</span>, <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">10</span>,<span class="dv">100</span>,<span class="dv">1000</span>))<span class="sc">+</span></span>
 <span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_sf</span>(<span class="at">ylim=</span>region[<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">4</span>)], <span class="at">xlim=</span>region[<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>)])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><img src="index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>Milton_storm_wind <span class="ot">&lt;-</span> storm_data_new <span class="sc">%&gt;%</span></span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">year =</span> <span class="fu">year</span>(ISO_TIME))<span class="sc">%&gt;%</span></span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2024</span>)<span class="sc">%&gt;%</span></span>
-<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(NUMBER <span class="sc">==</span> <span class="dv">71</span>)<span class="sc">%&gt;%</span></span>
-<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(USA_WIND <span class="sc">==</span> <span class="dv">71</span>)</span>
-<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>Milton_storm_wind_data <span class="ot">&lt;-</span> Milton_storm_wind <span class="sc">%&gt;%</span></span>
-<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_as_sf</span>(<span class="at">coords=</span><span class="fu">c</span>(<span class="st">"LON"</span>,<span class="st">"LAT"</span>),<span class="at">crs=</span><span class="dv">4326</span>, <span class="at">remove =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<pre><code>Warning in min(cc[[1]], na.rm = TRUE): no non-missing arguments to min;
-returning Inf</code></pre>
-<pre><code>Warning in min(cc[[2]], na.rm = TRUE): no non-missing arguments to min;
-returning Inf</code></pre>
-<pre><code>Warning in max(cc[[1]], na.rm = TRUE): no non-missing arguments to max;
-returning -Inf</code></pre>
-<pre><code>Warning in max(cc[[2]], na.rm = TRUE): no non-missing arguments to max;
-returning -Inf</code></pre>
-<p>Add any additional processing steps here.</p>
-</section>
-</section>
-<section id="results" class="level1">
-<h1>Results</h1>
-<p>[~200 words]</p>
-<p>Tables and figures (maps and other graphics) are carefully planned to convey the results of your analysis. Intense exploration and evidence of many trials and failures. The author looked at the data in many different ways before coming to the final presentation of the data.</p>
-<p>Show tables, plots, etc. and describe them.</p>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 <section id="dygraphs-example" class="level3">
 <h3 class="anchored" data-anchor-id="dygraphs-example">Dygraphs Example</h3>
 </section>
