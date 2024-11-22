@@ -41,7 +41,6 @@ Here's my first code chunk.
 if (!requireNamespace("drat", quietly = TRUE)) {
     install.packages("drat")
 }
-
 library(drat)
 addRepo("geanders")
 install.packages("hurricaneexposure") 
@@ -49,9 +48,6 @@ install.packages("hurricaneexposuredata")
 if (!requireNamespace("sf", quietly = TRUE)) {
     install.packages("sf")
 }
-
-
-
 if (!requireNamespace("tidyverse", quietly = TRUE)) {
     install.packages("tidyverse")
 }
@@ -150,72 +146,7 @@ Add any additional processing steps here.
 Tables and figures (maps and other graphics) are carefully planned to convey the results of your analysis. Intense exploration and evidence of many trials and failures. The author looked at the data in many different ways before coming to the final presentation of the data.
 
 Show tables, plots, etc. and describe them.
-```{r}
-#install both "hurricaneexposure" &"hurricaneexposuredata" packages for the functions to run
-data("hurr_tracks")
-head(hurr_tracks)
-data("storm_events")
-head(storm_events)
 
-#provides tracks for the hurricanes that occurred
-
-library(dplyr)
-library(tidyr)
-storms_all <- hurr_tracks %>%
-  select(storm_id) %>%
-  distinct() %>%
-  mutate(year = stringr::str_extract(storm_id, "-[0-9].+")) %>%
-  filter(year <= 2018)
-map_tracks((storms = storms_all$storm_id),
-alpha = 0.5, plot_points = TRUE, color = "blue")
-
-
-
-
-Gulf_Ariene_1993 <-map_tracks(storms = "Ariene-1993")
-
-Gulf_Dean_1995 <-map_tracks(storms = "Dean-1995")
-
-Gulf_Bret_1999 <-map_tracks(storms = "Bret-1999")
-
-Gulf_Allison_2001 <-map_tracks(storms = "Allison-2001")
-
-Gulf_Don_2011 <-map_tracks(storms = "Don-2011")
-
-Gulf_Ingrid_2013 <-map_tracks(storms = "Ingrid-2013")
-
-Gulf_Bill_2015 <-map_tracks(storms = "Bill-2015")
-
-Gulf_Helene_2000 <-map_tracks(storms = "Helene-2000")
-
-
-Gulf_1989 <- map_tracks(storms = c("Allison-1989", "Chantal-1989", "Jerry-1989"),
-           alpha = 0.5, plot_points = TRUE, color = "blue")
-
-Gulf_1998 <- map_tracks(storms = c("Charley-1998", "Frances-1998"),
-         alpha = 0.5, plot_points = TRUE, color = "blue")
-
-Gulf_2002 <- map_tracks(storms = c("Bertha-2002", "Fay-2002"),
-           alpha = 0.5, plot_points = TRUE, color = "blue")
-
-Gulf_2003 <- map_tracks(storms = c("Claudette-2003", "Erika-2003","Grace-2003"),
-           alpha = 0.5, plot_points = TRUE, color = "blue")
-
-Gulf_2005 <- map_tracks(storms = c("Emily-2005", "Rita-2005"),
-           alpha = 0.5, plot_points = TRUE, color = "blue")
-
-Gulf_2007 <- map_tracks(storms = c("Erin-2007", "Humberto-2007"),
-           alpha = 0.5, plot_points = TRUE, color = "blue")
-
-Gulf_2008 <- map_tracks(storms = c("Dolly-2008", "Eduoard-2008","Ike-2008"),
-           alpha = 0.5, plot_points = TRUE, color = "blue")
-
-Gulf_2010 <- map_tracks(storms = c("Alex-2010", "Hermine-2010"),
-           alpha = 0.5, plot_points = TRUE, color = "blue")
-
-Gulf_2017 <- map_tracks(storms = c("Cindy-2017", "Harvey-2017"),
-           alpha = 0.5, plot_points = TRUE, color = "blue")
-```
 
 ```{r}
 ggplot(data = world)+
@@ -228,20 +159,27 @@ ggplot(data = world)+
 ```
 ```{r}
 ggplot(Milton_storm_data, aes(x=as.numeric(USA_WIND)))+geom_histogram()
-
+ggplot(Milton_storm_data, aes(x=as.numeric(USA_WIND)))+geom_boxplot()
 ```
 
 ```{r}
 ggplot(storm_data_new, aes(x=as.numeric(USA_WIND)))+geom_histogram()
+ggplot(storm_data_new, aes(x=as.numeric(USA_WIND)))+geom_boxplot()
 ```
 
 ```{r}
 ggplot(Milton_storm_data, aes(x=as.numeric(USA_PRES)))+geom_histogram()
+ggplot(Milton_storm_data, aes(x=as.numeric(USA_PRES)))+geom_boxplot()
 ```
 
 ```{r}
 ggplot(storm_data_new, aes(x=as.numeric(USA_PRES)))+geom_histogram()
+ggplot(storm_data_new, aes(x=as.numeric(USA_WIND)))+geom_boxplot()
 ```
+```{r}
+ggplot(Milton_storm_data, aes(x=as.numeric(USA_WIND)), storm_data_new, aes(x=as.numeric(USA_WIND)))+geom_boxplot()
+
+``` 
 
 
 ### Dygraphs Example
