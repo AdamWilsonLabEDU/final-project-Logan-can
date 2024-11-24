@@ -12,7 +12,14 @@ date-format: long
 
 # Materials and methods
 
-\[\~ 200 words\]
+#The primary data being used in the R studio code was NOAA’s IBTrACS V04r01 CVS data, (Knapp et. al, 2010) & (Gahtan et. al, 2024), and the world & us_states data derived from NOAA swell, with the R studio packages of drat, sf, tidyverse, ggmap, lubridate, and tmap to sort and organize the NOAA data into the maps and plots provided below in the results section of the website. 
+
+#The code provided to do this separates the hurricane data recorded from hurricane Milton and to reintegrate it back into the whole hurricane data measured to show the differences in the path it took in comparison to other hurricanes between 2000-2020. The plots accomplish a similar method of comparing the differences between the pressure and wind speeds of hurricane Milton and every other hurricane between 2000 and 2020 but without combining them. 
+
+#The CSV file for NOAA’s hurricane data comes from the international-best-track-archive website. The world and us_states data are shape files that can be loaded in with the sf function in rstudio. 
+
+
+
 
 Narrative: Clear narrative description of the data sources and methods. Includes data from at least two sources that were integrated / merged in R.
 
@@ -141,11 +148,10 @@ Add any additional processing steps here.
 
 # Results
 
-\[\~200 words\]
+#The resulting data presented within the ggplot map that shows Hurricane Milton, (black), and the hurricane tracks, (coloured red to orange based on count),and the different boxplots and histograms measuring the Pressure and Wind records for both the overall hurricanes measured between 2000 and 2020 – and Milton, shows a clear difference within Milton’s tracks, pressure, and wind speed kept during its duration. The storm track for Milton in the ggplot map shows that formed in the Gulf of Mexico, moved north of 20 degrees longitude, taking a sharp right eastward through the middle of Florida to the Atlantic Ocean. Other hurricane tracks are visible moving across Central America to the pacific, and to parts of Europe, Canada, and the South-Central U.S. This is not to discount the abnormality of Milton but to compare it.
 
-Tables and figures (maps and other graphics) are carefully planned to convey the results of your analysis. Intense exploration and evidence of many trials and failures. The author looked at the data in many different ways before coming to the final presentation of the data.
+#The Box plots of Milton’s wind speed and pressure show a high interquartile range between the first and third quantiles, with the Hurricane wind speed and pressure having al low Interquartile range skewed to the left for both. The Histograms for Milton aswell show the pressure and wind measurements to be widely variable as well, which is not reflected in the Hurricane histograms, with the wind histogram, m being skewed to the right, and the pressure histogram being skewed to the left.
 
-Show tables, plots, etc. and describe them.
 
 
 ```{r}
@@ -180,10 +186,6 @@ ggplot(storm_data_new, aes(x=as.numeric(USA_WIND)))+geom_boxplot()
 ggplot(Milton_storm_data, aes(x=as.numeric(USA_WIND)), storm_data_new, aes(x=as.numeric(USA_WIND)))+geom_boxplot()
 
 ``` 
-
-
-### Dygraphs Example
-
 
 
 # Conclusions
