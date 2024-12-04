@@ -190,7 +190,8 @@ Gulf_2008
 Gulf_2010
 Gulf_2017
 map_tracks(storms = c("Erika-2003"),
-           alpha = 0.5, plot_points = TRUE, color = "blue")
+           alpha = 0.5, plot_points = TRUE, color = "blue") + 
+        ggplot2::ggtitle("Erika (2003) Path through the Gulf of Mexico")
 
 ```
 
