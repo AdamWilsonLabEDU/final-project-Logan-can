@@ -1,5 +1,5 @@
 ---
-title: "Analysis of Hurricane Mitlon's abnormal track, pressure, and wind speed"
+title: "Analysis of Hurricane Milton within a Anthropogenic Climate Change perspective - Monitoring Mitlon's track, pressure, and wind speed"
 author: Logan Hales
 subtitle: Hurricanes
 date: today
