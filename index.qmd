@@ -158,25 +158,32 @@ alpha = 0.5, plot_points = TRUE, color = "blue")
 
 
 Gulf_2002 <- map_tracks(storms = c("Bertha-2002", "Fay-2002"),
-           alpha = 0.5, plot_points = TRUE, color = "blue")
+           alpha = 0.5, plot_points = TRUE, color = "blue")+ 
+        ggplot2::ggtitle("Bertha and Fay (2002) Path through the Gulf of Mexico")
 
 Gulf_2003 <- map_tracks(storms = c("Claudette-2003", "Erika-2003","Grace-2003"),
-           alpha = 0.5, plot_points = TRUE, color = "blue")
+           alpha = 0.5, plot_points = TRUE, color = "blue")+ 
+        ggplot2::ggtitle("Claudette, Erika, and Grace (2003) Path through the Gulf of Mexico")
 
 Gulf_2005 <- map_tracks(storms = c("Emily-2005", "Rita-2005"),
-           alpha = 0.5, plot_points = TRUE, color = "blue")
+           alpha = 0.5, plot_points = TRUE, color = "blue")+ 
+        ggplot2::ggtitle("Emily and Rita (2005) Path through the Gulf of Mexico")
 
 Gulf_2007 <- map_tracks(storms = c("Erin-2007", "Humberto-2007"),
-           alpha = 0.5, plot_points = TRUE, color = "blue")
+           alpha = 0.5, plot_points = TRUE, color = "blue")+ 
+        ggplot2::ggtitle("Erin and Humberto (2007) Path through the Gulf of Mexico")
 
 Gulf_2008 <- map_tracks(storms = c("Dolly-2008", "Eduoard-2008","Ike-2008"),
-           alpha = 0.5, plot_points = TRUE, color = "blue")
+           alpha = 0.5, plot_points = TRUE, color = "blue")+ 
+        ggplot2::ggtitle("Dolly, Eduoard, and Ike (2008) Path through the Gulf of Mexico")
 
 Gulf_2010 <- map_tracks(storms = c("Alex-2010", "Hermine-2010"),
-           alpha = 0.5, plot_points = TRUE, color = "blue")
+           alpha = 0.5, plot_points = TRUE, color = "blue")+ 
+        ggplot2::ggtitle("Alex and Hermine (2010) Path through the Gulf of Mexico")
 
 Gulf_2017 <- map_tracks(storms = c("Cindy-2017", "Harvey-2017"),
-           alpha = 0.5, plot_points = TRUE, color = "blue")
+           alpha = 0.5, plot_points = TRUE, color = "blue")+ 
+        ggplot2::ggtitle("Cindy and Harvey (2017) Path through the Gulf of Mexico")
 
 #Gulf_All <- map_tracks(storm = c(Gulf_1989, Gulf_1998, Gulf_2002, Gulf_2003, Gulf_2005, Gulf_2007, Gulf_2008, Gulf_2010, Gulf_2017), 
   #alpha = 0.5, plot_points = TRUE, color = "blue")
@@ -208,38 +215,38 @@ ggplot(data = world)+
 ```
 ```{r}
 Milton_Wind_speed_HIST <- ggplot(Milton_storm_data, aes(x=as.numeric(USA_WIND)))+geom_histogram()+
-  labs(title = "Hurricane Milton Wind Speed Measure (Histogram)")
+  labs(title = "Hurricane Milton Wind Speed")
 Milton_Wind_Box <- ggplot(Milton_storm_data, aes(x=as.numeric(USA_WIND)))+geom_boxplot()+
-  labs(title = "Hurricane Milton Wind Speed Measure (Boxplot)")
+  labs(title = "Hurricane Milton Wind Speed")
 
 ```
 
 ```{r}
 All_Wind_speed_HIST <-ggplot(storm_data_new, aes(x=as.numeric(USA_WIND)))+geom_histogram()+geom_vline(xintercept = 150)+
-  labs(title = "2000 - 2020 Hurricane Wind Speed - Milton Line Measure (Histogram)")
+  labs(title = "2000 - 2020 Hurricane Wind Speed - Milton Line")
 
 All_Wind_speed_HIST_min <-ggplot(storm_data_new, aes(x=as.numeric(USA_WIND)))+geom_histogram()+geom_vline(xintercept = 25)+
-  labs(title = "2000 - 2020 Hurrican Wind Speed- Milton Line Minimum Measure (Histogram)")
+  labs(title = "2000 - 2020 Hurrican Wind Speed- Milton Line Minimum")
 All_Wind_Box <- ggplot(storm_data_new, aes(x=as.numeric(USA_WIND)))+geom_boxplot()+
-  labs(title = "2000 - 2020 Hurricane Wind Speed Measure (Boxplot)") 
+  labs(title = "2000 - 2020 Hurricane Wind Speed") 
 
 ```
 
 ```{r}
 Milton_Pres_Hist <- ggplot(Milton_storm_data, aes(x=as.numeric(USA_PRES)))+geom_histogram()+
-  labs(title = "Hurricane Milton Pressure Measure (Histogram)")
+  labs(title = "Hurricane Milton Pressure")
 Milton_Pres_Box <- ggplot(Milton_storm_data, aes(x=as.numeric(USA_PRES)))+geom_boxplot()+
-  labs(title = "Hurricane Milton Pressure Measure (Boxplot)")
+  labs(title = "Hurricane Milton Pressure")
 
 ```
 
 ```{r}
 All_Pres_Hist <-ggplot(storm_data_new, aes(x=as.numeric(USA_PRES)))+geom_histogram()+geom_vline(xintercept = 1009)+
-  labs(title = "2000 - 2020 Hurricane Pressure - Milton Line Measure (Histogram)")
+  labs(title = "2000 - 2020 Hurricane Pressure - Milton Line")
 All_Pres_Hist_min <-ggplot(storm_data_new, aes(x=as.numeric(USA_PRES)))+geom_histogram()+geom_vline(xintercept = 901)+
-  labs(title = "2000 - 2020 Hurricane Pressure - Milton Line Minimum Measure (Histogram)")
+  labs(title = "2000 - 2020 Hurricane Pressure - Milton Line Minimum")
 All_Pres_Box <-ggplot(storm_data_new, aes(x=as.numeric(USA_PRES)))+geom_boxplot()+
-  labs(title = "2000 - 2020 Hurricane Pressure Measure (Boxplot)")
+  labs(title = "2000 - 2020 Hurricane Pressure")
 
 ```
 
@@ -257,9 +264,10 @@ plot_grid(Milton_Pres_Box, All_Pres_Box,aling = "hv", axis = "tblr", ncol=2, nro
 
 ```{r}
 All_Pres_Hist <-ggplot(storm_data_new, aes(x=as.numeric(USA_PRES)))+geom_histogram()+geom_vline(xintercept = 1009)+
-  labs(title = "2000 - 2020 Hurricane Pressure - Milton Line Measure (Histogram)")
+  labs(title = "2000 - 2020 Hurricane Pressure - Milton Line")
 ggarrange(Milton_Pres_Hist, All_Pres_Hist)
 ```
+
 ```{r}
 ggarrange(All_Wind_speed_HIST_min, All_Pres_Hist_min)
 ```
