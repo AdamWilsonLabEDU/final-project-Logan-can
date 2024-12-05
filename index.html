@@ -9,7 +9,7 @@
 <meta name="author" content="Logan Hales">
 <meta name="dcterms.date" content="2024-12-05">
 
-<title>Analysis of Hurricane Mitlon’s abnormal track, pressure, and wind speed – GEO511_FinalProject</title>
+<title>Analysis of Hurricane Milton within a Anthropogenic Climate Change perspective - Monitoring Mitlon’s track, pressure, and wind speed – GEO511_FinalProject</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -148,7 +148,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Analysis of Hurricane Mitlon’s abnormal track, pressure, and wind speed</h1>
+<h1 class="title">Analysis of Hurricane Milton within a Anthropogenic Climate Change perspective - Monitoring Mitlon’s track, pressure, and wind speed</h1>
 <p class="subtitle lead">Hurricanes</p>
 </div>
 
@@ -193,7 +193,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># Downloading packages -------------------------------------------------------
-- Downloading drat from CRAN ...                OK [197.3 Kb in 0.33s]
+- Downloading drat from CRAN ...                OK [197.3 Kb in 0.37s]
 Successfully downloaded 1 package in 1.2 seconds.
 
 The following package(s) will be installed:
@@ -201,22 +201,22 @@ The following package(s) will be installed:
 These packages will be installed into "~/work/final-project-Logan-can/final-project-Logan-can/renv/library/linux-ubuntu-jammy/R-4.4/x86_64-pc-linux-gnu".
 
 # Installing packages --------------------------------------------------------
-- Installing drat ...                           OK [installed binary and cached in 0.21s]
-Successfully installed 1 package in 0.25 seconds.</code></pre>
+- Installing drat ...                           OK [installed binary and cached in 0.27s]
+Successfully installed 1 package in 0.33 seconds.</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(drat)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">addRepo</span>(<span class="st">"geanders"</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"hurricaneexposure"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># Downloading packages -------------------------------------------------------
-- Downloading hurricaneexposure from CRAN ...   OK [1.9 Mb in 0.49s]
-- Downloading ggmap from CRAN ...               OK [4.5 Mb in 0.33s]
-- Downloading plyr from CRAN ...                OK [768 Kb in 0.31s]
-- Downloading jpeg from CRAN ...                OK [28.6 Kb in 0.3s]
+- Downloading hurricaneexposure from CRAN ...   OK [1.9 Mb in 0.35s]
+- Downloading ggmap from CRAN ...               OK [4.5 Mb in 0.36s]
+- Downloading plyr from CRAN ...                OK [768 Kb in 0.32s]
+- Downloading jpeg from CRAN ...                OK [28.6 Kb in 0.27s]
 - Downloading bitops from CRAN ...              OK [25.4 Kb in 0.23s]
-- Downloading mapproj from CRAN ...             OK [50.4 Kb in 0.33s]
-- Downloading maps from CRAN ...                OK [2.9 Mb in 0.27s]
-Successfully downloaded 7 packages in 4.1 seconds.
+- Downloading mapproj from CRAN ...             OK [50.4 Kb in 0.28s]
+- Downloading maps from CRAN ...                OK [2.9 Mb in 0.29s]
+Successfully downloaded 7 packages in 4 seconds.
 
 The following package(s) will be installed:
 - bitops            [1.0-9]
@@ -229,20 +229,20 @@ The following package(s) will be installed:
 These packages will be installed into "~/work/final-project-Logan-can/final-project-Logan-can/renv/library/linux-ubuntu-jammy/R-4.4/x86_64-pc-linux-gnu".
 
 # Installing packages --------------------------------------------------------
-- Installing plyr ...                           OK [installed binary and cached in 0.28s]
+- Installing plyr ...                           OK [installed binary and cached in 0.29s]
 - Installing jpeg ...                           OK [installed binary and cached in 0.2s]
 - Installing bitops ...                         OK [installed binary and cached in 0.2s]
-- Installing ggmap ...                          OK [installed binary and cached in 0.76s]
-- Installing maps ...                           OK [installed binary and cached in 0.27s]
-- Installing mapproj ...                        OK [installed binary and cached in 0.2s]
-- Installing hurricaneexposure ...              OK [installed binary and cached in 0.54s]
-Successfully installed 7 packages in 2.7 seconds.</code></pre>
+- Installing ggmap ...                          OK [installed binary and cached in 0.81s]
+- Installing maps ...                           OK [installed binary and cached in 0.26s]
+- Installing mapproj ...                        OK [installed binary and cached in 0.21s]
+- Installing hurricaneexposure ...              OK [installed binary and cached in 0.57s]
+Successfully installed 7 packages in 2.8 seconds.</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"hurricaneexposuredata"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># Downloading packages -------------------------------------------------------
 - Downloading hurricaneexposuredata from geanders ... OK [14.4 Mb in 0.61s]
-Successfully downloaded 1 package in 0.91 seconds.
+Successfully downloaded 1 package in 0.92 seconds.
 
 The following package(s) will be installed:
 - hurricaneexposuredata [0.1.0]
@@ -257,14 +257,14 @@ Successfully installed 1 package in 13 seconds.</code></pre>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># Downloading packages -------------------------------------------------------
-- Downloading sf from CRAN ...                  OK [3.6 Mb in 0.3s]
-- Downloading classInt from CRAN ...            OK [487.3 Kb in 0.29s]
-- Downloading e1071 from CRAN ...               OK [582.2 Kb in 0.24s]
+- Downloading sf from CRAN ...                  OK [3.6 Mb in 0.27s]
+- Downloading classInt from CRAN ...            OK [487.3 Kb in 0.23s]
+- Downloading e1071 from CRAN ...               OK [582.2 Kb in 0.23s]
 - Downloading proxy from CRAN ...               OK [171.5 Kb in 0.33s]
-- Downloading s2 from CRAN ...                  OK [2.1 Mb in 0.27s]
-- Downloading wk from CRAN ...                  OK [1.7 Mb in 0.27s]
+- Downloading s2 from CRAN ...                  OK [2.1 Mb in 0.23s]
+- Downloading wk from CRAN ...                  OK [1.7 Mb in 0.24s]
 - Downloading units from CRAN ...               OK [354.5 Kb in 0.23s]
-Successfully downloaded 7 packages in 2.9 seconds.
+Successfully downloaded 7 packages in 2.7 seconds.
 
 The following package(s) will be installed:
 - classInt [0.4-10]
@@ -277,14 +277,14 @@ The following package(s) will be installed:
 These packages will be installed into "~/work/final-project-Logan-can/final-project-Logan-can/renv/library/linux-ubuntu-jammy/R-4.4/x86_64-pc-linux-gnu".
 
 # Installing packages --------------------------------------------------------
-- Installing proxy ...                          OK [installed binary and cached in 0.2s]
+- Installing proxy ...                          OK [installed binary and cached in 0.21s]
 - Installing e1071 ...                          OK [installed binary and cached in 0.22s]
-- Installing classInt ...                       OK [installed binary and cached in 0.22s]
-- Installing wk ...                             OK [installed binary and cached in 0.24s]
+- Installing classInt ...                       OK [installed binary and cached in 0.23s]
+- Installing wk ...                             OK [installed binary and cached in 0.25s]
 - Installing s2 ...                             OK [installed binary and cached in 0.34s]
 - Installing units ...                          OK [installed binary and cached in 0.3s]
-- Installing sf ...                             OK [installed binary and cached in 0.65s]
-Successfully installed 7 packages in 2.4 seconds.</code></pre>
+- Installing sf ...                             OK [installed binary and cached in 0.67s]
+Successfully installed 7 packages in 2.5 seconds.</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">"tidyverse"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)) {</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span>
@@ -297,8 +297,8 @@ Successfully installed 7 packages in 2.4 seconds.</code></pre>
 <span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># Downloading packages -------------------------------------------------------
-- Downloading spData from CRAN ...              OK [4.3 Mb in 0.33s]
-Successfully downloaded 1 package in 0.53 seconds.
+- Downloading spData from CRAN ...              OK [4.3 Mb in 0.42s]
+Successfully downloaded 1 package in 0.62 seconds.
 
 The following package(s) will be installed:
 - spData [2.3.3]
@@ -322,21 +322,21 @@ Successfully installed 1 package in 0.49 seconds.</code></pre>
 <span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># Downloading packages -------------------------------------------------------
-- Downloading tmap from CRAN ...                OK [3.6 Mb in 0.27s]
-- Downloading tmaptools from CRAN ...           OK [168.5 Kb in 0.35s]
-- Downloading lwgeom from CRAN ...              OK [468.5 Kb in 0.34s]
-- Downloading stars from CRAN ...               OK [4.3 Mb in 0.33s]
-- Downloading abind from CRAN ...               OK [63.6 Kb in 0.23s]
-- Downloading dichromat from CRAN ...           OK [143 Kb in 0.37s]
-- Downloading XML from CRAN ...                 OK [1.7 Mb in 0.26s]
-- Downloading leafsync from CRAN ...            OK [823.7 Kb in 0.43s]
-- Downloading leafem from CRAN ...              OK [3.4 Mb in 0.3s]
-- Downloading geojsonsf from CRAN ...           OK [1.6 Mb in 0.26s]
-- Downloading geometries from CRAN ...          OK [283.2 Kb in 0.25s]
-- Downloading jsonify from CRAN ...             OK [628.8 Kb in 0.39s]
-- Downloading rapidjsonr from CRAN ...          OK [126.4 Kb in 0.26s]
-- Downloading sfheaders from CRAN ...           OK [471.7 Kb in 0.24s]
-Successfully downloaded 14 packages in 6.2 seconds.
+- Downloading tmap from CRAN ...                OK [3.6 Mb in 0.32s]
+- Downloading tmaptools from CRAN ...           OK [168.5 Kb in 0.26s]
+- Downloading lwgeom from CRAN ...              OK [468.5 Kb in 0.3s]
+- Downloading stars from CRAN ...               OK [4.3 Mb in 0.26s]
+- Downloading abind from CRAN ...               OK [63.6 Kb in 0.21s]
+- Downloading dichromat from CRAN ...           OK [143 Kb in 0.26s]
+- Downloading XML from CRAN ...                 OK [1.7 Mb in 0.3s]
+- Downloading leafsync from CRAN ...            OK [823.7 Kb in 0.27s]
+- Downloading leafem from CRAN ...              OK [3.4 Mb in 0.29s]
+- Downloading geojsonsf from CRAN ...           OK [1.6 Mb in 0.23s]
+- Downloading geometries from CRAN ...          OK [283.2 Kb in 0.26s]
+- Downloading jsonify from CRAN ...             OK [628.8 Kb in 0.25s]
+- Downloading rapidjsonr from CRAN ...          OK [126.4 Kb in 0.25s]
+- Downloading sfheaders from CRAN ...           OK [471.7 Kb in 0.27s]
+Successfully downloaded 14 packages in 5.7 seconds.
 
 The following package(s) will be installed:
 - abind      [1.4-8]
@@ -356,19 +356,19 @@ The following package(s) will be installed:
 These packages will be installed into "~/work/final-project-Logan-can/final-project-Logan-can/renv/library/linux-ubuntu-jammy/R-4.4/x86_64-pc-linux-gnu".
 
 # Installing packages --------------------------------------------------------
-- Installing lwgeom ...                         OK [installed binary and cached in 0.47s]
-- Installing abind ...                          OK [installed binary and cached in 0.2s]
-- Installing stars ...                          OK [installed binary and cached in 0.66s]
-- Installing dichromat ...                      OK [installed binary and cached in 0.21s]
-- Installing XML ...                            OK [installed binary and cached in 0.34s]
-- Installing tmaptools ...                      OK [installed binary and cached in 0.92s]
+- Installing lwgeom ...                         OK [installed binary and cached in 0.48s]
+- Installing abind ...                          OK [installed binary and cached in 0.21s]
+- Installing stars ...                          OK [installed binary and cached in 0.68s]
+- Installing dichromat ...                      OK [installed binary and cached in 0.2s]
+- Installing XML ...                            OK [installed binary and cached in 0.35s]
+- Installing tmaptools ...                      OK [installed binary and cached in 0.93s]
 - Installing leafsync ...                       OK [installed binary and cached in 0.21s]
 - Installing geometries ...                     OK [installed binary and cached in 0.29s]
-- Installing rapidjsonr ...                     OK [installed binary and cached in 0.2s]
-- Installing jsonify ...                        OK [installed binary and cached in 0.29s]
+- Installing rapidjsonr ...                     OK [installed binary and cached in 0.21s]
+- Installing jsonify ...                        OK [installed binary and cached in 0.3s]
 - Installing sfheaders ...                      OK [installed binary and cached in 0.29s]
 - Installing geojsonsf ...                      OK [installed binary and cached in 0.3s]
-- Installing leafem ...                         OK [installed binary and cached in 3.8s]
+- Installing leafem ...                         OK [installed binary and cached in 3.9s]
 - Installing tmap ...                           OK [installed binary and cached in 4.1s]
 Successfully installed 14 packages in 13 seconds.</code></pre>
 </div>
@@ -377,9 +377,9 @@ Successfully installed 14 packages in 13 seconds.</code></pre>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># Downloading packages -------------------------------------------------------
-- Downloading egg from CRAN ...                 OK [854.4 Kb in 0.31s]
-- Downloading gridExtra from CRAN ...           OK [1.1 Mb in 0.24s]
-Successfully downloaded 2 packages in 0.85 seconds.
+- Downloading egg from CRAN ...                 OK [854.4 Kb in 0.4s]
+- Downloading gridExtra from CRAN ...           OK [1.1 Mb in 0.32s]
+Successfully downloaded 2 packages in 1 second.
 
 The following package(s) will be installed:
 - egg       [0.4.5]
@@ -387,9 +387,9 @@ The following package(s) will be installed:
 These packages will be installed into "~/work/final-project-Logan-can/final-project-Logan-can/renv/library/linux-ubuntu-jammy/R-4.4/x86_64-pc-linux-gnu".
 
 # Installing packages --------------------------------------------------------
-- Installing gridExtra ...                      OK [installed binary and cached in 0.34s]
-- Installing egg ...                            OK [installed binary and cached in 0.62s]
-Successfully installed 2 packages in 1 second.</code></pre>
+- Installing gridExtra ...                      OK [installed binary and cached in 0.36s]
+- Installing egg ...                            OK [installed binary and cached in 0.63s]
+Successfully installed 2 packages in 1.1 seconds.</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">"cowplot"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)) {</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">install.packages</span>(<span class="st">"cowplot"</span>)</span>
@@ -397,15 +397,15 @@ Successfully installed 2 packages in 1 second.</code></pre>
 <div class="cell-output cell-output-stdout">
 <pre><code># Downloading packages -------------------------------------------------------
 - Downloading cowplot from CRAN ...             OK [1.3 Mb in 0.26s]
-Successfully downloaded 1 package in 0.46 seconds.
+Successfully downloaded 1 package in 0.45 seconds.
 
 The following package(s) will be installed:
 - cowplot [1.1.3]
 These packages will be installed into "~/work/final-project-Logan-can/final-project-Logan-can/renv/library/linux-ubuntu-jammy/R-4.4/x86_64-pc-linux-gnu".
 
 # Installing packages --------------------------------------------------------
-- Installing cowplot ...                        OK [installed binary and cached in 0.63s]
-Successfully installed 1 package in 0.66 seconds.</code></pre>
+- Installing cowplot ...                        OK [installed binary and cached in 0.64s]
+Successfully installed 1 package in 0.67 seconds.</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">"dplyr"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)) {</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">install.packages</span>(<span class="st">"dplyr"</span>)</span>
